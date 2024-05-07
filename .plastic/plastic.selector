@@ -1,0 +1,4 @@
+repository "CS247 Project 2@khaledmessaibusiness@cloud"
+  path "/"
+    br "/main"
+    co "/main"
