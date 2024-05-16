@@ -19,6 +19,13 @@ public class SalmonForm : PlayerController {
     public float salmonGravityScale = 0.3f; 
     public float normalGravityScale = 1.0f;
 
+    public float flopForce = 1.0f; 
+
+    public float flopJumpScale = 0.1f; 
+
+
+ 
+
     // In order for collision checking to work, we must have a collider object set to "is trigger" on water objects rather
     // than other types of collision. This tells Unity we're using it to trigger things rather than
     // to block movement. 
@@ -81,11 +88,20 @@ public class SalmonForm : PlayerController {
 
 
     private void Flop() {
-        //TODO : what does it mean to flop
+        isPlayerMoving = base.isMoving();
+        if (!isPlayerMoving) {
+            rb.AddForce(Vector2.left * flopForce, ForceMode2D.Impulse);
+            rb.AddForce(Vector2.up * salmonJumpScale * flopForce * flopJumpScale, ForceMode2D.Impulse);      
+        }
+
+        if (!isPlayerMoving) {
+            rb.AddForce(Vector2.right * flopForce, ForceMode2D.Impulse);
+        }
     }
 
     public override void SwitchSprite() {
         spriteRenderer.sprite = salmonSprite;
+
     }
 
     void OnEnable() {

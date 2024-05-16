@@ -8,7 +8,6 @@ public class SlimeForm : PlayerController {
 
     public PlayerController pc;
 
-
     void Start() {
         
     }
@@ -18,6 +17,9 @@ public class SlimeForm : PlayerController {
         pc = gameObject.GetComponent<PlayerController>();
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         slimeSprite = pc.Sprites[0];
+
+
+        
     }
     protected override void MovePlayer() {
 

@@ -72,8 +72,9 @@ public class PlayerController : MonoBehaviour {
     }
 
 
-    bool isMoving() {
-        return rb.velocity.x != 0;
+    public bool isMoving() {
+        isPlayerGrounded = isGrounded();
+        return rb.velocity.x != 0 || !isPlayerGrounded ;
     }
 
 

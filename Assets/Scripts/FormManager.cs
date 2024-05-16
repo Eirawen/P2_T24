@@ -9,6 +9,8 @@ public class FormManager : MonoBehaviour {
     public SalmonForm salmonForm;
     public SlimeForm slimeForm;
 
+    public PlayerController currentForm;
+
     
 
     void Start() {
@@ -38,6 +40,8 @@ public class FormManager : MonoBehaviour {
         slimeForm.enabled = false;
         newForm.enabled = true;
         newForm.SwitchSprite();
+
+        currentForm = newForm; 
     }
 }
 
