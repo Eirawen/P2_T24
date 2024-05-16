@@ -5,6 +5,9 @@ public class CameraFollow : MonoBehaviour {
     public float smoothSpeed = 0.8f;
     public float verticalOffset = 1.8f;
 
+    public float orthographicSize = 4;
+
+    
     void Start() {
         GameObject playerObject = GameObject.FindWithTag("Player");
         if (playerObject != null) {
@@ -13,7 +16,7 @@ public class CameraFollow : MonoBehaviour {
             Debug.LogError("Player not found");
         }
 
-        GetComponent<Camera>().orthographicSize = 4;
+        GetComponent<Camera>().orthographicSize = orthographicSize;
     }
     void Update() {
         Vector3 newPosition = new Vector3(player.position.x, player.position.y + verticalOffset, transform.position.z);
