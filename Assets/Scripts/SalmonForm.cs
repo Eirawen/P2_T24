@@ -16,7 +16,7 @@ public class SalmonForm : PlayerController {
     public SpriteRenderer spriteRenderer;
 
 
-    public float salmonGravityScale = 0.3f; 
+    public float salmonGravityScale = 0f; 
     public float normalGravityScale = 1.0f;
 
     public float flopForce = 1.0f; 
@@ -38,6 +38,7 @@ public class SalmonForm : PlayerController {
 
     protected override void Awake() {
             base.Awake();
+            rb = gameObject.GetComponent<Rigidbody2D>();            
             pc = gameObject.GetComponent<PlayerController>();
             spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
             salmonSprite = pc.Sprites[1];
@@ -65,14 +66,29 @@ public class SalmonForm : PlayerController {
 
     protected override void MovePlayer() {
         if (inWater) {
+            Debug.Log("in water");
+            // base.MovePlayer();
+            // float y = moveInputY * speed;
             base.MovePlayer();
+            // float x = moveInputX * speed;
+            // float y = rb.velocity.y + moveInputY * speed;
+            // Vector2 targetVelocity = new Vector2(x, y);
+            // isPlayerGrounded = isGrounded();
+
+            // if (isPlayerGrounded) {
+            //     rb.velocity = Vector2.SmoothDamp(rb.velocity, targetVelocity, ref velocitySmooth, movementSmooth);
+            // } else {
+            //     targetVelocity *= airControl;   
+            //     rb.velocity = Vector2.SmoothDamp(rb.velocity, targetVelocity, ref velocitySmooth, movementSmooth * airControl);
+            // }
         } else {
             Flop();
         }
     }
 
     protected override void Update() {
-        moveInput = Input.GetAxis("Horizontal");
+        moveInputX = Input.GetAxis("Horizontal");
+        moveInputY = Input.GetAxis("Vertical");
         MovePlayer();
         if (Input.GetKeyDown(KeyCode.Space)) {
             if (inWater) {
@@ -101,6 +117,7 @@ public class SalmonForm : PlayerController {
 
     public override void SwitchSprite() {
         spriteRenderer.sprite = salmonSprite;
+        currentSprite = salmonSprite;
 
     }
 
