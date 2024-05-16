@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour {
     public bool isPlayerGrounded; // checks if the player is on the ground
     public bool isPlayerMoving; // checks if the player is moving
 
-    private float moveInput; // stores the player's input for movement
+    protected float moveInput; // stores the player's input for movement
 
     public Sprite[] Sprites; // stores the player's sprites
 
@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour {
 
     }
 
-    public void Update() { // called every frame
+    protected virtual void Update() { // called every frame
         moveInput = Input.GetAxis("Horizontal");
         MovePlayer(); 
         if (Input.GetKeyDown(KeyCode.Space)) {
@@ -76,6 +76,10 @@ public class PlayerController : MonoBehaviour {
         return rb.velocity.x != 0;
     }
 
+
+    public virtual void SwitchSprite() {
+
+    }
 
 
 

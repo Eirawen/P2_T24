@@ -6,6 +6,8 @@ public class SalmonForm : PlayerController {
 
     private int waterLayer; 
 
+    public float salmonScale = 0.4f;
+
     public Sprite salmonSprite;
 
     public PlayerController pc; 
@@ -30,6 +32,7 @@ public class SalmonForm : PlayerController {
 
     protected override void Awake() {
         base.Awake();
+        
     }
 
     // Unity's method called when the Collider other exits the trigger
@@ -55,13 +58,27 @@ public class SalmonForm : PlayerController {
         }
     }
 
+    protected override void Update() {
+        moveInput = Input.GetAxis("Horizontal");
+        MovePlayer();
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            Debug.Log("Jump");
+            Jump();
+        }
+    }
+
+
     protected override void Jump() {
-        //TODO : override salmon jump
+        rb.AddForce(Vector2.up * jumpForce * salmonScale, ForceMode2D.Impulse);
     }
 
 
     private void Flop() {
         //TODO : what does it mean to flop
+    }
+
+    public override void SwitchSprite() {
+        gameObject.GetComponent<SpriteRenderer>().sprite = pc.Sprites[1];
     }
 }
     

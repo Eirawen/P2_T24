@@ -23,4 +23,8 @@ public class SlimeForm : PlayerController {
 
         base.MovePlayer();
     }
+
+    public override void SwitchSprite() {
+        gameObject.GetComponent<SpriteRenderer>().sprite = pc.Sprites[0];
+    }
 }

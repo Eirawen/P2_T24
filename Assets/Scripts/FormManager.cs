@@ -4,38 +4,40 @@ public class FormManager : MonoBehaviour {
     // to do
     // figure out what buttons trigger the forms (outside of the scope of this script)
     
-    private PlayerController currentForm;
 
+    public PlayerController baseController;
+    public SalmonForm salmonForm;
+    public SlimeForm slimeForm;
 
+    
 
+    void Start() {
+        baseController = gameObject.GetComponent<PlayerController>();
+        baseController.enabled = true;
+        salmonForm = gameObject.GetComponent<SalmonForm>();
+        salmonForm.enabled = false;
+        slimeForm = gameObject.GetComponent<SlimeForm>();
+        slimeForm.enabled = false;
+    }
 
 
     void Update() {
         if (Input.GetKeyDown(KeyCode.X)) {
-            transformToSlime();
+            SwitchForm(slimeForm);
         }
         if (Input.GetKeyDown(KeyCode.C)) {
-            transformtoSalmon();
+            SwitchForm(salmonForm);
         }
     }
 
     
-    public void transformtoSalmon () {
-        if (currentForm != null) {
-            Destroy(currentForm);
-        }
 
-        currentForm = gameObject.AddComponent<SalmonForm>();
-
-    }
-
-
-    public void transformToSlime() {
-        if (currentForm != null) {
-            Destroy(currentForm);
-        }
-
-        currentForm = gameObject.AddComponent<SlimeForm>();
+    public void SwitchForm(PlayerController newForm) {
+        baseController.enabled = false;
+        salmonForm.enabled = false;
+        slimeForm.enabled = false;
+        newForm.enabled = true;
+        newForm.SwitchSprite();
     }
 }
 
