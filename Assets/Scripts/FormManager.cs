@@ -6,6 +6,20 @@ public class FormManager : MonoBehaviour {
     
     private PlayerController currentForm;
 
+
+
+
+
+    void Update() {
+        if (Input.GetKeyDown(KeyCode.X)) {
+            transformToSlime();
+        }
+        if (Input.GetKeyDown(KeyCode.C)) {
+            transformtoSalmon();
+        }
+    }
+
+    
     public void transformtoSalmon () {
         if (currentForm != null) {
             Destroy(currentForm);

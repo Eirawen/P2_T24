@@ -3,7 +3,7 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour {
     private Transform player;
     public float smoothSpeed = 0.8f;
-    public float verticalOffset = 5.0f;
+    public float verticalOffset = 1.8f;
 
     void Start() {
         GameObject playerObject = GameObject.FindWithTag("Player");
@@ -13,7 +13,7 @@ public class CameraFollow : MonoBehaviour {
             Debug.LogError("Player not found");
         }
 
-        GetComponent<Camera>().orthographicSize = 7;
+        GetComponent<Camera>().orthographicSize = 4;
     }
     void Update() {
         Vector3 newPosition = new Vector3(player.position.x, player.position.y + verticalOffset, transform.position.z);
