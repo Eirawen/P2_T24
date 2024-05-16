@@ -14,9 +14,11 @@ public class PlayerController : MonoBehaviour {
     public bool isPlayerMoving; // checks if the player is moving
 
     protected float moveInput; // stores the player's input for movement
+    protected float moveInputX;
+    protected float moveInputY;
 
     public Sprite[] Sprites; // stores the player's sprites
-
+    public Sprite currentSprite; // stores the player's current sprite
 
 
     protected virtual void Awake() { // called when the script is first initialized
@@ -32,7 +34,7 @@ public class PlayerController : MonoBehaviour {
 
         groundLayer = LayerMask.GetMask("Ground");
         gameObject.tag = "Player";
-
+        currentSprite = Sprites[0];
 
     }
 
@@ -46,13 +48,29 @@ public class PlayerController : MonoBehaviour {
     }
 
     protected virtual void MovePlayer() { // defines player movement
-        float x = moveInput * speed;
+        float x = moveInputX * speed;
         float y = rb.velocity.y;
+        // Debug.Log("currentSprite", currentSprite);
+        // Debug.Log("Sprites[1]", Sprites[1]);
+        if (currentSprite == Sprites[1]) { // fish
+            y = moveInputY * speed;
+        }
+        // Debug.Log(Sprites);
+        // Debug.Log(currentSprite);
+        // Debug.Log(Sprites[1]);
+        // if(currentSprite == Sprites[1]) { // fish
+        //     Debug.Log("fish");
+        //     y =  moveInputY * speed;
+        // }
         Vector2 targetVelocity = new Vector2(x, y);
         isPlayerGrounded = isGrounded();
 
         if (isPlayerGrounded) {
-            rb.velocity = Vector2.SmoothDamp(rb.velocity, targetVelocity, ref velocitySmooth, movementSmooth);
+            if (currentSprite == Sprites[0]) { // slime
+                rb.velocity = Vector2.SmoothDamp(rb.velocity, targetVelocity, ref velocitySmooth, movementSmooth);
+            } else {
+                rb.velocity = Vector2.SmoothDamp(rb.velocity, targetVelocity, ref velocitySmooth, movementSmooth);
+            }
         } else {
             targetVelocity *= airControl;   
             rb.velocity = Vector2.SmoothDamp(rb.velocity, targetVelocity, ref velocitySmooth, movementSmooth * airControl);

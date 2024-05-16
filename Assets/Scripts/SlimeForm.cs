@@ -14,9 +14,11 @@ public class SlimeForm : PlayerController {
 
     protected override void Awake() {
         base.Awake();
+        rb = gameObject.GetComponent<Rigidbody2D>();
         pc = gameObject.GetComponent<PlayerController>();
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         slimeSprite = pc.Sprites[0];
+        // currentSprite = slimeSprite;
 
 
         
@@ -26,9 +28,13 @@ public class SlimeForm : PlayerController {
 
         base.MovePlayer();
     }
-
+    protected override void Update() {
+        moveInputX = Input.GetAxis("Horizontal");
+        MovePlayer();
+    }
     public override void SwitchSprite() {
         spriteRenderer.sprite = slimeSprite;
+        currentSprite = slimeSprite;
     }
 
     void OnEnable() {
