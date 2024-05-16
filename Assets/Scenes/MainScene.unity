@@ -133,9 +133,9 @@ GameObject:
   m_Component:
   - component: {fileID: 925660745}
   - component: {fileID: 925660744}
-  - component: {fileID: 925660746}
   - component: {fileID: 925660747}
   - component: {fileID: 925660748}
+  - component: {fileID: 925660749}
   m_Layer: 0
   m_Name: SlimePlayer
   m_TagString: Player
@@ -210,28 +210,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &925660746
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 925660743}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26c80c88bf3a68c4bb181f5716e632db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  jumpForce: 10
-  movementSmooth: 0.1
-  groundCheckDistance: 0.1
-  airControl: 0.3
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  isPlayerGrounded: 0
-  isPlayerMoving: 0
 --- !u!50 &925660747
 Rigidbody2D:
   serializedVersion: 4
@@ -294,6 +272,28 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 2}
   m_Direction: 0
+--- !u!114 &925660749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925660743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0488865b3654234b83eda446a7e04cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  jumpForce: 10
+  movementSmooth: 0.1
+  groundCheckDistance: 0.6
+  airControl: 0.9
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  isPlayerGrounded: 0
+  isPlayerMoving: 0
 --- !u!1 &1029562187
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,6 +435,7 @@ GameObject:
   - component: {fileID: 1246462546}
   - component: {fileID: 1246462545}
   - component: {fileID: 1246462544}
+  - component: {fileID: 1246462547}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -516,6 +517,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1246462547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1246462543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b5459ad742a83144879d9c3b9a8a37d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smoothSpeed: 0.8
+  verticalOffset: 5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

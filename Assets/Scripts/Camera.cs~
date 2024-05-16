@@ -1,0 +1,13 @@
+using UnityEngine;
+
+public class CameraFollow : MonoBehaviour {
+    player = GameObject.FindWithTag("Player").transform;
+    public float smoothSpeed = 0.125f;
+
+    void Update() {
+        Vector3 newPosition = new Vector3(player.position.x, player.position.y, transform.position.z);
+        Vector3 smoothedPosition = Vector3.Lerp(transform.position, newPosition, smoothSpeed * Time.deltaTime);
+        transform.position = smoothedPosition;
+    }
+    
+        

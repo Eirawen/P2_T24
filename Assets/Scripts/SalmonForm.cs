@@ -4,12 +4,19 @@ public class SalmonForm : PlayerController {
 
     private bool inWater = false;
 
+    private int waterLayer; 
+
     // In order for these methods to work, we must have a collider object set to "is trigger" rather
     // than other types of collision. This tells Unity we're using it to trigger things rather than
     // to block movement. 
+
+    void Start() {
+        // set the ground layer to the water layer
+        waterLayer = LayerMask.NameToLayer("Water");
+        }
     private void OnTriggerEnter2D(Collider2D water) {
         // if we are in water, change the flag. 
-        if (water.gameObject.layer == LayerMask.NameToLayer("Water")) {
+        if (water.gameObject.layer == waterLayer) {
             inWater = true;
             }
         }
@@ -18,30 +25,32 @@ public class SalmonForm : PlayerController {
     private void OnTriggerExit2D(Collider2D water) {
         // when leaving water change the flag
         if (water.gameObject.layer == LayerMask.NameToLayer("Water")) {
-            isInWater = false;
+            inWater = false;
             }
         }
 
 
-    public override void Move() {
-        //override salmon movement
+    protected override void MovePlayer() {
+        // TODO : override salmon movement
 
         //need to further develop.
 
+        // also these curly braces are messed up i was messing around in emacs ill fix it later. 
+
         if (inWater) {
-            base.Move();
+            base.MovePlayer();
             } else     {
             Flop();
             }
         }
 
-    public override void Jump() {
-        //override salmon jump
+    protected override void Jump() {
+        //TODO : override salmon jump
         }
 
 
     private void Flop() {
-
+        //TODO : what does it mean to flop
         }
     }
     
