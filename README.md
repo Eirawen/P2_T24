@@ -9,7 +9,8 @@ or protected properties of the class and seemed to me the most intuitive way of 
 
 The slime class does not have very many things in it, so we will talk about the SalmonForm class.
 
-The salmonform class presently accomplishes a few things. First, it overrides the parents Move and Jump.
+The salmonform class presently accomplishes a few things. 
+First, it overrides the parents Move and Jump.
 Second, it adds two collision checkers for entering and exiting water.
 Third, it adds a flop.
 Fourth, it changes the gravity to more closely mimic the buoyancy of water.
@@ -17,19 +18,22 @@ Fourth, it changes the gravity to more closely mimic the buoyancy of water.
 
 
 
-The salmonform movement override (protected override void MovePlayer() ) checks if the character is in water,
-permits them to move if they are, or else they flop.
+The salmonform movement override 
+(protected override void MovePlayer() ) 
+checks if the character is in water, permits them to move if they are, or else they flop.
 
-The jump override scales the jumpForce with salmonJumpScale, a float that is just used to tweak how powerful the jump should be.
+The jump override scales the jumpForce with salmonJumpScale, a float that is  used to tweak how powerful the jump should be.
 
 The collision checkers work with a layermask and two unity functions called
-OnTriggerEnter2D and OnTriggerExit2D. These are called anytime the game object interacts with a Collider2D object.
-Specifically in this case, the layermask checks if the layer of the object is water, and the flips the boolean
-inWater depending on if it's exiting or entering.
+OnTriggerEnter2D and OnTriggerExit2D. 
+These functions are called anytime the game object interacts with a Collider2D object, on entrance and on exit.
+Specifically in this case, the layermask checks if the layer of the object is water, and toggles the boolean
+inWater.
 
-Flopping is a bit weird. It checks if the player is moving, if they're not, it applies a tiny amount of force
-horizontally and vertically. The strange thing is that I do not know why the vertical force is not consistent,
-sometimes the salmon goes rather high, sometimes it goes rather low. I dont know why! It should be the same no
+Flopping is a bit weird. It checks if the player is moving. If they're not, it applies a tiny amount of force
+horizontally and vertically. 
+The strange thing is that I do not know why the vertical force is not consistent.
+Sometimes the salmon goes rather high, sometimes it goes rather low. I dont know why! It should be the same no
 matter what. But it sort of mimics proper flopping so im happy to leave it as is.
 
 
