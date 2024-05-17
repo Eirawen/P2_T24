@@ -19,7 +19,7 @@ public class FormManager : MonoBehaviour {
         salmonForm = gameObject.GetComponent<SalmonForm>();
         salmonForm.enabled = false;
         slimeForm = gameObject.GetComponent<SlimeForm>();
-        slimeForm.enabled = false;
+        slimeForm.enabled = true;
     }
 
 

@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour {
         gameObject.tag = "Player";
         currentSprite = Sprites[0];
 
+
     }
 
     protected virtual void Update() { // called every frame
@@ -50,18 +51,10 @@ public class PlayerController : MonoBehaviour {
     protected virtual void MovePlayer() { // defines player movement
         float x = moveInputX * speed;
         float y = rb.velocity.y;
-        // Debug.Log("currentSprite", currentSprite);
-        // Debug.Log("Sprites[1]", Sprites[1]);
-        if (currentSprite == Sprites[1]) { // fish
+        if (currentSprite == Sprites[1]) { // fish can swim up/down too
             y = moveInputY * speed;
         }
-        // Debug.Log(Sprites);
-        // Debug.Log(currentSprite);
-        // Debug.Log(Sprites[1]);
-        // if(currentSprite == Sprites[1]) { // fish
-        //     Debug.Log("fish");
-        //     y =  moveInputY * speed;
-        // }
+
         Vector2 targetVelocity = new Vector2(x, y);
         isPlayerGrounded = isGrounded();
 

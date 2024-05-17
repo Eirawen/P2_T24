@@ -34,6 +34,7 @@ public class SalmonForm : PlayerController {
         // set the ground layer to the water layer
         waterLayer = LayerMask.NameToLayer("Water");
         // set the sprite to the salmon sprite
+        
     }
 
     protected override void Awake() {
@@ -67,20 +68,8 @@ public class SalmonForm : PlayerController {
     protected override void MovePlayer() {
         if (inWater) {
             Debug.Log("in water");
-            // base.MovePlayer();
-            // float y = moveInputY * speed;
             base.MovePlayer();
-            // float x = moveInputX * speed;
-            // float y = rb.velocity.y + moveInputY * speed;
-            // Vector2 targetVelocity = new Vector2(x, y);
-            // isPlayerGrounded = isGrounded();
-
-            // if (isPlayerGrounded) {
-            //     rb.velocity = Vector2.SmoothDamp(rb.velocity, targetVelocity, ref velocitySmooth, movementSmooth);
-            // } else {
-            //     targetVelocity *= airControl;   
-            //     rb.velocity = Vector2.SmoothDamp(rb.velocity, targetVelocity, ref velocitySmooth, movementSmooth * airControl);
-            // }
+        
         } else {
             Flop();
         }
