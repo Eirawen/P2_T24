@@ -247,8 +247,8 @@ Transform:
   m_GameObject: {fileID: 92127107}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.4202, y: -0.2734, z: 0}
-  m_LocalScale: {x: 1.8203808, y: 4.5023913, z: 1}
+  m_LocalPosition: {x: -2.4639, y: -0.3523, z: 0}
+  m_LocalScale: {x: 5.733107, y: 4.659975, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -455,6 +455,7 @@ MonoBehaviour:
   baseController: {fileID: 0}
   salmonForm: {fileID: 0}
   slimeForm: {fileID: 0}
+  currentForm: {fileID: 0}
 --- !u!114 &925660752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -479,6 +480,7 @@ MonoBehaviour:
   isPlayerMoving: 0
   Sprites: []
   slimeSprite: {fileID: 21300000, guid: 425a91ca25c91144289daa62f9564eac, type: 3}
+  spriteRenderer: {fileID: 0}
   pc: {fileID: 0}
 --- !u!114 &925660753
 MonoBehaviour:
@@ -503,9 +505,14 @@ MonoBehaviour:
   isPlayerGrounded: 0
   isPlayerMoving: 0
   Sprites: []
-  salmonScale: 0.4
+  salmonJumpScale: 0.4
   salmonSprite: {fileID: 21300000, guid: 08bab00995436b741b0f67332e11db0d, type: 3}
   pc: {fileID: 0}
+  spriteRenderer: {fileID: 0}
+  salmonGravityScale: 0.3
+  normalGravityScale: 1
+  flopForce: 1
+  flopJumpScale: 0.1
 --- !u!1 &1029562187
 GameObject:
   m_ObjectHideFlags: 0
@@ -743,6 +750,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smoothSpeed: 0.8
   verticalOffset: 2.4
+  orthographicSize: 4
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

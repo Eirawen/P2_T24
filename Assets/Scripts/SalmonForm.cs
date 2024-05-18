@@ -66,10 +66,12 @@ public class SalmonForm : PlayerController {
 
 
     protected override void MovePlayer() {
+        float x = moveInputX * speed;
+        float y = rb.velocity.y;
+        y = moveInputY * speed;
         if (inWater) {
-            Debug.Log("in water");
-            base.MovePlayer();
-        
+            Vector2 targetVelocity = new Vector2(x, y);
+            rb.velocity = Vector2.SmoothDamp(rb.velocity, targetVelocity, ref velocitySmooth, movementSmooth);
         } else {
             Flop();
         }

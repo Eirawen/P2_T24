@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour {
     public float airControl = 0.9f; // how much control the player has in the air
     public LayerMask groundLayer; //defines the ground layer - useful for checking collision with the ground
     protected Rigidbody2D rb; // rigidbody2d is the unity physics component that allows the player to move
-    private Vector2 velocitySmooth; // smooths out the movement
+    protected Vector2 velocitySmooth; // smooths out the movement
     public bool isPlayerGrounded; // checks if the player is on the ground
     public bool isPlayerMoving; // checks if the player is moving
 
@@ -43,7 +43,8 @@ public class PlayerController : MonoBehaviour {
         moveInput = Input.GetAxis("Horizontal");
         MovePlayer(); 
         if (Input.GetKeyDown(KeyCode.Space)) {
-            Debug.Log("Jump");
+            Debug.Log("Jump"); 
+            
             Jump();
         }
     }
@@ -51,19 +52,15 @@ public class PlayerController : MonoBehaviour {
     protected virtual void MovePlayer() { // defines player movement
         float x = moveInputX * speed;
         float y = rb.velocity.y;
-        if (currentSprite == Sprites[1]) { // fish can swim up/down too
-            y = moveInputY * speed;
-        }
+                                            //So, the reason we can't do this here, is because Unity throws a bunch of errors when accessing the sprite array.
+                                           // what we want to do generally is keep all of the form specific movement in the child class, so we know its only active for that class. 
+
 
         Vector2 targetVelocity = new Vector2(x, y);
         isPlayerGrounded = isGrounded();
 
-        if (isPlayerGrounded) {
-            if (currentSprite == Sprites[0]) { // slime
-                rb.velocity = Vector2.SmoothDamp(rb.velocity, targetVelocity, ref velocitySmooth, movementSmooth);
-            } else {
-                rb.velocity = Vector2.SmoothDamp(rb.velocity, targetVelocity, ref velocitySmooth, movementSmooth);
-            }
+        if (isPlayerGrounded) { 
+            rb.velocity = Vector2.SmoothDamp(rb.velocity, targetVelocity, ref velocitySmooth, movementSmooth);
         } else {
             targetVelocity *= airControl;   
             rb.velocity = Vector2.SmoothDamp(rb.velocity, targetVelocity, ref velocitySmooth, movementSmooth * airControl);
@@ -92,23 +89,6 @@ public class PlayerController : MonoBehaviour {
     public virtual void SwitchSprite() {
 
     }
-
-
-
-    // might want a collision check visualizer if it shows prudent. 
-
-
-
-
-
-
-
-
-    //Things to add:
-    //Maybe put all collision for walls in here, I dont know if it works the same as 3d. 
-    //Add a check for the player to be able to jump off walls? 
-    //currently probably doesn't handle slopes very well.
-    //add a platform layer
 
 }
 
