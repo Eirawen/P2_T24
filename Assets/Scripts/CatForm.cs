@@ -7,7 +7,8 @@ public class CatForm : PlayerController {
     public SpriteRenderer spriteRenderer;
     public PlayerController pc;
 
-    public float catGravityScale = 0.5f;
+    public float catGravityScale = 0.9f;
+    public float catJumpScale = 1.5f;
     public LayerMask catJumpLayer;
 
     private BoxCollider2D boxCollider; 
@@ -40,7 +41,7 @@ public class CatForm : PlayerController {
 
     protected override void Jump() {
         if (canJump()) {
-            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            rb.AddForce(Vector2.up * jumpForce * catJumpScale, ForceMode2D.Impulse);
         }
     }
 

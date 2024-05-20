@@ -51,21 +51,28 @@ public class SalmonForm : PlayerController {
 
     private void OnTriggerEnter2D(Collider2D water) {
         // if we are in water, change the flag. 
+        
         if (water.gameObject.layer == waterLayer) {
             inWater = true;
+            Debug.Log("In water");
         }
-        rb.gravityScale = salmonGravityScale;
+        if (enabled) { 
+            rb.gravityScale = salmonGravityScale;
+        }
     }
 
     
 
     // Unity's method called when the Collider other exits the trigger
     private void OnTriggerExit2D(Collider2D water) {
+
         // when leaving water change the flag
         if (water.gameObject.layer == LayerMask.NameToLayer("Water")) {
             inWater = false;
         }
-        rb.gravityScale = salmonAirGravityScale;
+        if (enabled) {
+            rb.gravityScale = salmonAirGravityScale;
+        }
     }
 
 

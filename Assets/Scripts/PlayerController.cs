@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour {
     public float normalGravityScale = 1.0f; // how much gravity affects the player
     public LayerMask groundLayer; //defines the ground layer - useful for checking collision with the ground
     protected Rigidbody2D rb; // rigidbody2d is the unity physics component that allows the player to move
-    protected Vector2 velocitySmooth; // smooths out the movement
+    protected Vector2 velocitySmooth = Vector2.zero; // smooths out the movement
     public bool isPlayerGrounded; // checks if the player is on the ground
     public bool isPlayerMoving; // checks if the player is moving
 
@@ -52,12 +52,11 @@ public class PlayerController : MonoBehaviour {
 
     protected virtual void MovePlayer() { // defines player movement
         float x = moveInputX * speed;
-        float y = rb.velocity.y;
                                             //So, the reason we can't do this here, is because Unity throws a bunch of errors when accessing the sprite array.
                                            // what we want to do generally is keep all of the form specific movement in the child class, so we know its only active for that class. 
 
 
-        Vector2 targetVelocity = new Vector2(x, y);
+        Vector2 targetVelocity = new Vector2(x, rb.velocity.y);
         isPlayerGrounded = isGrounded();
 
         if (isPlayerGrounded) { 
