@@ -16,12 +16,15 @@ public class SalmonForm : PlayerController {
     public SpriteRenderer spriteRenderer;
 
 
-    public float salmonGravityScale = 0f; 
+    public float salmonGravityScale = 0.3f; 
     public float normalGravityScale = 1.0f;
 
     public float flopForce = 1.0f; 
 
     public float flopJumpScale = 0.1f; 
+
+    public float salmonAirControl = 0.9f;
+    public float salmonAirGravityScale = 0.6f;
 
 
  
@@ -52,6 +55,7 @@ public class SalmonForm : PlayerController {
         if (water.gameObject.layer == waterLayer) {
             inWater = true;
         }
+        rb.gravityScale = salmonGravityScale;
     }
 
     
@@ -62,17 +66,33 @@ public class SalmonForm : PlayerController {
         if (water.gameObject.layer == LayerMask.NameToLayer("Water")) {
             inWater = false;
         }
+        rb.gravityScale = salmonAirGravityScale;
     }
 
 
     protected override void MovePlayer() {
         float x = moveInputX * speed;
         float y = rb.velocity.y;
-        y = moveInputY * speed;
+    
         if (inWater) {
+            y = moveInputY * speed;
             Vector2 targetVelocity = new Vector2(x, y);
             rb.velocity = Vector2.SmoothDamp(rb.velocity, targetVelocity, ref velocitySmooth, movementSmooth);
         } else {
+            float velocity = rb.velocity.x;
+            switch (velocity) {
+                case float n when n > 0:
+                    x = speed * salmonAirControl;
+                    break;
+                case float n when n < 0:
+                    x = -speed * salmonAirControl;
+                    break;
+                default:
+                    x = 0;
+                    break;
+            }
+            Vector2 targetVelocity = new Vector2(x, y);
+            rb.velocity = Vector2.SmoothDamp(rb.velocity, targetVelocity, ref velocitySmooth, movementSmooth);
             Flop();
         }
     }
@@ -97,18 +117,12 @@ public class SalmonForm : PlayerController {
     private void Flop() {
         isPlayerMoving = base.isMoving();
         if (!isPlayerMoving) {
-            rb.AddForce(Vector2.left * flopForce, ForceMode2D.Impulse);
             rb.AddForce(Vector2.up * salmonJumpScale * flopForce * flopJumpScale, ForceMode2D.Impulse);      
-        }
-
-        if (!isPlayerMoving) {
-            rb.AddForce(Vector2.right * flopForce, ForceMode2D.Impulse);
         }
     }
 
     public override void SwitchSprite() {
         spriteRenderer.sprite = salmonSprite;
-        currentSprite = salmonSprite;
 
     }
 

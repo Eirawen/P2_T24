@@ -41,7 +41,6 @@ public class SlimeForm : PlayerController {
         pc = gameObject.GetComponent<PlayerController>();
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         slimeSprite = pc.Sprites[0];
-        currentSprite = slimeSprite;
 
 
         
@@ -56,7 +55,6 @@ public class SlimeForm : PlayerController {
     }
     public override void SwitchSprite() {
         spriteRenderer.sprite = slimeSprite;
-        currentSprite = slimeSprite;
     }
 
     void OnEnable() {
