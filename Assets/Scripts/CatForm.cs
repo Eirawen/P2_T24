@@ -16,7 +16,6 @@ public class CatForm : PlayerController {
 
     protected override void Awake() {
         base.Awake();
-        rb = gameObject.GetComponent<Rigidbody2D>();
         pc = gameObject.GetComponent<PlayerController>();
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         catSprite = pc.Sprites[3];

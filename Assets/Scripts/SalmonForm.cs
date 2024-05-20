@@ -41,7 +41,6 @@ public class SalmonForm : PlayerController {
 
     protected override void Awake() {
             base.Awake();
-            rb = gameObject.GetComponent<Rigidbody2D>();            
             pc = gameObject.GetComponent<PlayerController>();
             spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
             salmonSprite = pc.Sprites[1];
