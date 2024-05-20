@@ -10,7 +10,6 @@ public class SlimeForm : PlayerController {
     public PlayerController pc;
 
     public float slimeGravityScale = 0.0f;
-    public float normalGravityScale = 1.0f;
     private BoxCollider2D boxCollider; // stores the player's box collider
     private Vector2 originalSlimeSize; // stores the player's original size
 

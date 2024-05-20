@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour {
     public float movementSmooth = 0.1f; // how smooth the movement is, play around with this value
     public float groundCheckDistance = 0.6f; // how far down to check for ground
     public float airControl = 0.9f; // how much control the player has in the air
+    public float normalGravityScale = 1.0f; // how much gravity affects the player
     public LayerMask groundLayer; //defines the ground layer - useful for checking collision with the ground
     protected Rigidbody2D rb; // rigidbody2d is the unity physics component that allows the player to move
     protected Vector2 velocitySmooth; // smooths out the movement
@@ -35,7 +36,6 @@ public class PlayerController : MonoBehaviour {
 
         groundLayer = LayerMask.GetMask("Ground");
         gameObject.tag = "Player";
-        currentSprite = Sprites[0];
 
 
     }
@@ -75,7 +75,7 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    bool isGrounded() {
+    protected bool isGrounded() {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, groundCheckDistance, groundLayer);
         return hit.collider != null;
     }

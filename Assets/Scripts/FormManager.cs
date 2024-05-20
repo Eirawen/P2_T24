@@ -8,6 +8,7 @@ public class FormManager : MonoBehaviour {
     public PlayerController baseController;
     public SalmonForm salmonForm;
     public SlimeForm slimeForm;
+    public CatForm catForm;
 
     public PlayerController currentForm;
 
@@ -20,6 +21,9 @@ public class FormManager : MonoBehaviour {
         salmonForm.enabled = false;
         slimeForm = gameObject.GetComponent<SlimeForm>();
         slimeForm.enabled = true;
+        catForm = gameObject.GetComponent<CatForm>();
+        catForm.enabled = false;
+
     }
 
 
@@ -30,6 +34,9 @@ public class FormManager : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.C)) {
             SwitchForm(salmonForm);
         }
+        if (Input.GetKeyDown(KeyCode.V)) {
+            SwitchForm(catForm);
+        }
     }
 
     
@@ -38,6 +45,7 @@ public class FormManager : MonoBehaviour {
         baseController.enabled = false;
         salmonForm.enabled = false;
         slimeForm.enabled = false;
+        catForm.enabled = false;
         newForm.enabled = true;
         newForm.SwitchSprite();
 
