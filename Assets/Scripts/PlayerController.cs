@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour {
     public Sprite currentSprite; // stores the player's current sprite
 
 
+
     protected virtual void Awake() { // called when the script is first initialized
         rb = gameObject.GetComponent<Rigidbody2D>();
     }

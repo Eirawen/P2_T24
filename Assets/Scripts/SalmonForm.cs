@@ -80,6 +80,9 @@ public class SalmonForm : PlayerController {
             rb.velocity = Vector2.SmoothDamp(rb.velocity, targetVelocity, ref velocitySmooth, movementSmooth);
         } else {
             float velocity = rb.velocity.x;
+            if (isPlayerGrounded) {
+                velocity = 0;
+            }
             switch (velocity) {
                 case float n when n > 0:
                     x = speed * salmonAirControl;
