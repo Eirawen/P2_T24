@@ -820,7 +820,8 @@ MonoBehaviour:
   catSprite: {fileID: 0}
   spriteRenderer: {fileID: 0}
   pc: {fileID: 0}
-  catGravityScale: 0.5
+  catGravityScale: 1.5
+  catJumpScale: 1.5
   catJumpLayer:
     serializedVersion: 2
     m_Bits: 0
