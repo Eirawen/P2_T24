@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour {
     public Sprite[] Sprites; // stores the player's sprites
     public Sprite currentSprite; // stores the player's current sprite
 
+    public static Vector2 lastCheckPointPos;
+
 
 
     protected virtual void Awake() { // called when the script is first initialized
@@ -47,6 +49,13 @@ public class PlayerController : MonoBehaviour {
             Debug.Log("Jump"); 
             
             Jump();
+        }
+
+        // If "p" is pressed, respawn to checkpoint. Will change to on death + menu click later
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            Debug.Log("Respawn!");
+            returnToCheckpoint();
         }
     }
 
@@ -88,6 +97,11 @@ public class PlayerController : MonoBehaviour {
 
     public virtual void SwitchSprite() {
 
+    }
+
+    protected virtual void returnToCheckpoint()
+    {
+        GameObject.FindGameObjectWithTag("Player").transform.position = lastCheckPointPos;
     }
 
 }
