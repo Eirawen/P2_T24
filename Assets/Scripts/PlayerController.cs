@@ -99,11 +99,11 @@ public class PlayerController : MonoBehaviour {
 
     }
 
-    protected virtual void returnToCheckpoint()
+    public void returnToCheckpoint()
+
     {
         GameObject.FindGameObjectWithTag("Player").transform.position = lastCheckPointPos;
     }
-
 }
 
 
