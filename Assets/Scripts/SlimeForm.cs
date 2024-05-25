@@ -46,6 +46,13 @@ public class SlimeForm : PlayerController {
         } else if (Input.GetKeyDown(KeyCode.L)) {
             deCompress();
         }
+
+        // If "p" is pressed, respawn to checkpoint. Will change to on death + menu click later
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            Debug.Log("Respawn!");
+            returnToCheckpoint();
+        }
     }
 
 
