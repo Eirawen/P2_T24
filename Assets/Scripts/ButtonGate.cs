@@ -7,7 +7,7 @@ public class ButtonGate : MonoBehaviour
     public GameObject gate;
     public float speed = 1;
     private bool isMoving;
-    private bool isPressed;
+    public bool isPressed;
     private bool isColliding;
     private Vector3 uppos;
     private Vector3 downpos;
