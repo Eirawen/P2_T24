@@ -43,6 +43,13 @@ public class PlayerController : MonoBehaviour {
     }
 
     protected virtual void Update() { // called every frame
+        if (DialogueManager.Instance != null && DialogueManager.Instance.isDialogueActive)
+        {
+            moveInput = 0f;
+            rb.velocity = Vector2.zero; // Immediately stop the player's movement
+            return;
+        }
+
         moveInput = Input.GetAxis("Horizontal");
         MovePlayer(); 
         if (Input.GetKeyDown(KeyCode.Space)) {
@@ -57,6 +64,7 @@ public class PlayerController : MonoBehaviour {
             Debug.Log("Respawn!");
             returnToCheckpoint();
         }
+
     }
 
     protected virtual void MovePlayer() { // defines player movement

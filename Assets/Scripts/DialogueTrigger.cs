@@ -26,17 +26,35 @@ public class Dialogue
 public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue dialogue;
+    private bool isPlayerInTrigger = false;
 
     public void TriggerDialogue()
     {
         DialogueManager.Instance.StartDialogue(dialogue);
     }
 
+    private void Update()
+    {
+        if (isPlayerInTrigger && Input.GetKeyDown(KeyCode.E))
+        {
+            Debug.Log("Pressed E");
+            TriggerDialogue();
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
-            TriggerDialogue();
+            isPlayerInTrigger = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            isPlayerInTrigger = false;
         }
     }
 }
