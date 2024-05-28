@@ -9,10 +9,12 @@ public class ButtonGate : MonoBehaviour
     private bool isMoving;
     public bool isPressed;
     private bool isColliding;
-    private Vector3 uppos;
-    private Vector3 downpos;
-    private Vector3 pos;
-
+    private float uppos;
+    private float downpos;
+    // private Vector3 uppos;
+    // private Vector3 downpos;
+    // private Vector3 pos;
+    private float pos;
 
     void Start() {
         isPressed = false;
@@ -21,9 +23,12 @@ public class ButtonGate : MonoBehaviour
         var gateCollider = gate.GetComponent<BoxCollider2D>();
         var bounds = gateCollider.bounds;
         float y = (float) bounds.size.y;
-        uppos = gate.transform.position + new Vector3(0, y, 0);
-        downpos = gate.transform.position; 
-        pos = gate.transform.position;
+        uppos = gate.transform.position.y + y;
+        downpos = gate.transform.position.y;
+        // uppos = gate.transform.position + new Vector3(0, y, 0);
+        // downpos = gate.transform.position; 
+        pos = gate.transform.position.y;
+        // pos = gate.transform.position;
     }
 
 
@@ -51,19 +56,19 @@ public class ButtonGate : MonoBehaviour
         if (isMoving){
             
             if (isPressed){ //move up   
-                if(pos.y < uppos.y){
+                if(pos < uppos){
                     Debug.Log("up");
                     moveUp();
-                    pos = gate.transform.position;
+                    pos = gate.transform.position.y;
                 }
                 else{
                     isMoving = false;
                 }
             } else { //move down
-                if(pos.y > downpos.y){
+                if(pos > downpos){
                     Debug.Log("down");
                     moveDown();
-                    pos = gate.transform.position;
+                    pos = gate.transform.position.y;
                 }
                 else{
                     isMoving = false;
