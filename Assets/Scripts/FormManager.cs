@@ -23,6 +23,7 @@ public class FormManager : MonoBehaviour {
         slimeForm.enabled = true;
         catForm = gameObject.GetComponent<CatForm>();
         catForm.enabled = false;
+        SwitchForm(slimeForm); // switch to slime at start of the game. 
 
     }
 

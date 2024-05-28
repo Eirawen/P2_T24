@@ -116,12 +116,7 @@ public class SalmonForm : PlayerController {
             }
         }
 
-        // If "p" is pressed, respawn to checkpoint. Will change to on death + menu click later
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            Debug.Log("Respawn!");
-            returnToCheckpoint();
-        }
+        base.Update();
     }
 
 

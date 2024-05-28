@@ -18,6 +18,10 @@ public class PlayerController : MonoBehaviour {
     protected float moveInputX;
     protected float moveInputY;
 
+    public static bool catFormUnlocked; 
+    public static bool salmonFormUnlocked;
+    public static bool humanFormUnlocked; 
+
     public Sprite[] Sprites; // stores the player's sprites
     public Sprite currentSprite; // stores the player's current sprite
 
@@ -37,11 +41,7 @@ public class PlayerController : MonoBehaviour {
         gameObject.tag = "Player";
     }
     void Start() { // called when the script is first initialized
-
-       
-
-
-
+        
     }
 
     protected virtual void Update() { // called every frame
@@ -59,14 +59,6 @@ public class PlayerController : MonoBehaviour {
             moveInput = 0f;
             rb.velocity = Vector2.zero;
             return;
-        }
-
-        moveInput = Input.GetAxis("Horizontal");
-        MovePlayer(); 
-        if (Input.GetKeyDown(KeyCode.Space)) {
-            Debug.Log("Jump"); 
-            
-            Jump();
         }
 
         // If "p" is pressed, respawn to checkpoint. Will change to on death + menu click later
