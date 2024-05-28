@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class GameManager : MonoBehaviour {
@@ -12,6 +13,7 @@ public class GameManager : MonoBehaviour {
                     Debug.LogError("No GameManager found in the scene. Creating a new one.");
                     GameObject go = new GameObject("GameManager");
                     _Instance = go.AddComponent<GameManager>();
+                    DontDestroyOnLoad(go);
                 }
             }
             return _Instance;
@@ -22,10 +24,12 @@ public class GameManager : MonoBehaviour {
 
     void Awake() {
         if (_Instance != null && _Instance != this) {
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         } else {
             _Instance = this;   
-            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(this.gameObject);
         }  
     }
+
+    
 }

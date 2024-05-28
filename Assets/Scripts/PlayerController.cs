@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour {
 
 
     protected virtual void Awake() { // called when the script is first initialized
+        DontDestroyOnLoad(this.gameObject); // keeps the player persistent between scenes
         rb = gameObject.GetComponent<Rigidbody2D>();
         if (rb == null) {
             rb = gameObject.AddComponent<Rigidbody2D>();
