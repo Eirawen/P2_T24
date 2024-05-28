@@ -4737,6 +4737,7 @@ MonoBehaviour:
         icon: {fileID: 21300000, guid: e013923e95d6c454b91b79cfaf3869a3, type: 3}
       line: Can you help us? It seems like there's a small gap, but we're too big
         to fit...
+  isAutomatic: 0
 --- !u!61 &1633416875
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5549,6 +5550,7 @@ MonoBehaviour:
         name: Sally
         icon: {fileID: 21300000, guid: e013923e95d6c454b91b79cfaf3869a3, type: 3}
       line: Press c to turn into a fish!
+  isAutomatic: 0
 --- !u!61 &1769576444
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5835,7 +5837,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2063612176}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b5459ad742a83144879d9c3b9a8a37d, type: 3}
   m_Name: 
