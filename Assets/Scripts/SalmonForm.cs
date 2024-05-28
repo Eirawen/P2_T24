@@ -68,6 +68,7 @@ public class SalmonForm : PlayerController {
         // when leaving water change the flag
         if (water.gameObject.layer == LayerMask.NameToLayer("Water")) {
             inWater = false;
+            
         }
         if (enabled) {
             rb.gravityScale = salmonAirGravityScale;

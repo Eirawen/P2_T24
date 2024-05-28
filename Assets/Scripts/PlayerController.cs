@@ -27,17 +27,18 @@ public class PlayerController : MonoBehaviour {
 
     protected virtual void Awake() { // called when the script is first initialized
         rb = gameObject.GetComponent<Rigidbody2D>();
-    }
-    void Start() { // called when the script is first initialized
-
-        rb = GetComponent<Rigidbody2D>();
         if (rb == null) {
             rb = gameObject.AddComponent<Rigidbody2D>();
             Debug.LogWarning("Rigidbody2d component not found, adding one automatically");
+            
         }
-
         groundLayer = LayerMask.GetMask("Ground");
         gameObject.tag = "Player";
+    }
+    void Start() { // called when the script is first initialized
+
+       
+
 
 
     }

@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour {
     private Transform player;
-    public float smoothSpeed = 0.8f;
+    public float smoothSpeed = 6.0f;
     public float verticalOffset = 1.8f;
 
-    public float orthographicSize = 4;
+    public float orthographicSize = 6;
 
     
     void Start() {
