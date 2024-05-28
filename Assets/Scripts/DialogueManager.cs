@@ -47,6 +47,7 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextDialogueLine()
     {
+        Debug.Log("Display next dialogue line");
         if (lines.Count == 0)
         {
             EndDialogue();

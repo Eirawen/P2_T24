@@ -27,15 +27,23 @@ public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue dialogue;
     private bool isPlayerInTrigger = false;
+    public bool isAutomatic = false;
+    private bool hasPlayed = false;
 
     public void TriggerDialogue()
     {
+        hasPlayed = true;
         DialogueManager.Instance.StartDialogue(dialogue);
     }
 
     private void Update()
     {
-        if (isPlayerInTrigger && Input.GetKeyDown(KeyCode.E))
+        
+        if (isPlayerInTrigger && isAutomatic && !DialogueManager.Instance.isDialogueActive && !hasPlayed){
+            TriggerDialogue();
+        }
+        
+        else if (isPlayerInTrigger && Input.GetKeyDown(KeyCode.E))
         {
             Debug.Log("Pressed E");
             TriggerDialogue();
