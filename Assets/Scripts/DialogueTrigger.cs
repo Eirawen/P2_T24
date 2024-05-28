@@ -38,9 +38,11 @@ public class DialogueTrigger : MonoBehaviour
 
     private void Update()
     {
+        
         if (isPlayerInTrigger && isAutomatic && !DialogueManager.Instance.isDialogueActive && !hasPlayed){
             TriggerDialogue();
         }
+        
         else if (isPlayerInTrigger && Input.GetKeyDown(KeyCode.E))
         {
             Debug.Log("Pressed E");

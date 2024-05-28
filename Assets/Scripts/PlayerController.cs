@@ -50,6 +50,15 @@ public class PlayerController : MonoBehaviour {
             return;
         }
 
+
+        if (PasswordTrigger.Instance != null && PasswordTrigger.Instance.isSolving)
+        {
+            // If the player is currently solving the password, stop the player's movement
+            moveInput = 0f;
+            rb.velocity = Vector2.zero;
+            return;
+        }
+
         moveInput = Input.GetAxis("Horizontal");
         MovePlayer(); 
         if (Input.GetKeyDown(KeyCode.Space)) {
