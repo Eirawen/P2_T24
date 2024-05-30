@@ -46,6 +46,8 @@ public class DialogueTrigger : MonoBehaviour
         else if (isPlayerInTrigger && Input.GetKeyDown(KeyCode.E))
         {
             Debug.Log("Pressed E");
+            Debug.Log(transform.position);
+            SoundManager.Instance.PlaySound3D("Jump", transform.position);
             TriggerDialogue();
         }
     }
