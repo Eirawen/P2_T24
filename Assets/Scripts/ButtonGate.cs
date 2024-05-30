@@ -5,21 +5,21 @@ using UnityEngine;
 public class ButtonGate : MonoBehaviour
 {
     public GameObject gate;
+    public GameObject Sam;
     public float speed = 1;
     private bool isMoving;
     public bool isPressed;
     private bool isColliding;
     private float uppos;
     private float downpos;
-    // private Vector3 uppos;
-    // private Vector3 downpos;
-    // private Vector3 pos;
+    public bool isSamIn;
     private float pos;
 
     void Start() {
         isPressed = false;
         isColliding = false;
         isMoving = false;
+        isSamIn = false;
         var gateCollider = gate.GetComponent<BoxCollider2D>();
         var bounds = gateCollider.bounds;
         float y = (float) bounds.size.y;
@@ -62,6 +62,11 @@ public class ButtonGate : MonoBehaviour
                     pos = gate.transform.position.y;
                 }
                 else{
+                    if (!isSamIn)
+                    {
+                        isSamIn = true;
+                        moveSamIn();
+                    }
                     isMoving = false;
                 }
             } else { //move down
@@ -90,4 +95,12 @@ public class ButtonGate : MonoBehaviour
         gate.transform.position +=  new Vector3(0, -0.1f, 0);
     }
 
+
+    void moveSamIn(){
+        Debug.Log("in moveSamIn");
+        Sam.transform.position = new Vector3(Sam.transform.position.x + 8, Sam.transform.position.y, 0);
+        Sam.GetComponent<DialogueTrigger>().dialogue.dialogueLines[0].line = "Thank you for letting us in!";
+        Sam.GetComponent<DialogueTrigger>().dialogue.dialogueLines[1].line = "Looks like the exit's up there, but we can't jump that high!";
+        Sam.GetComponent<DialogueTrigger>().dialogue.dialogueLines[2].line = "Can you raise the water level somehow?";
+    }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ButtonWater: MonoBehaviour{
     public ButtonGate buttonGate;
+    public GameObject Sam;
     public GameObject water;
     private bool isPressed;   
     private bool isColliding; 
@@ -11,6 +12,7 @@ public class ButtonWater: MonoBehaviour{
     private float uppos;
     private float downpos;
     private float pos;
+    private bool isADACompliant;
 
     void Start(){
         isPressed = false;
@@ -34,6 +36,18 @@ public class ButtonWater: MonoBehaviour{
     }
 
     void Update(){
+
+        if(isPressed && buttonGate.isPressed){
+            if(pos > downpos){
+                moveDown();
+                pos = water.transform.position.y;
+            }
+            else{
+                isMoving = false;
+                isPressed = false;
+            }
+        }
+
         if (!isMoving && isColliding && Input.GetKeyDown(KeyCode.F) && !buttonGate.isPressed){
             Debug.Log("Pay respects");
             isPressed = !isPressed;
@@ -49,6 +63,10 @@ public class ButtonWater: MonoBehaviour{
                     pos = water.transform.position.y;
                 }
                 else{
+                    if (!isADACompliant && buttonGate.isSamIn){
+                        moveSamOut();
+                        isADACompliant = true;
+                    }
                     isMoving = false;
                 }
             } else { //move down
@@ -76,4 +94,12 @@ public class ButtonWater: MonoBehaviour{
         water.transform.position +=  new Vector3(0, -0.05f, 0);
     }
 
+
+    void moveSamOut(){
+        Debug.Log("in moveSamOut");
+        Sam.GetComponent<DialogueTrigger>().dialogue.dialogueLines[0].line = "You did it!";
+        Sam.GetComponent<DialogueTrigger>().dialogue.dialogueLines[1].line = "Now we can all swim into the city!";
+        Sam.GetComponent<DialogueTrigger>().dialogue.dialogueLines[2].line = "Head to that opening and we'll follow you out!";
+        Sam.GetComponent<DialogueTrigger>().TriggerDialogue();
+    }
 }
