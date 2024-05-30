@@ -7,8 +7,9 @@ public class MainMenu : MonoBehaviour
 {
     public void Play()
     {
-        SceneManager.LoadScene("Game"); // game is a placeholder for next scene
+        //SceneManager.LoadScene("Game");  is a placeholder for next scene
         Debug.Log("Start Game");
+        MusicManager.Instance.PlayMusic("Game");
     }
 
     public void Quit()
