@@ -5,6 +5,7 @@ using UnityEngine;
 public class ButtonWater: MonoBehaviour{
     public ButtonGate buttonGate;
     public GameObject Sam;
+    public GameObject school;
     public GameObject water;
     private bool isPressed;   
     private bool isColliding; 
