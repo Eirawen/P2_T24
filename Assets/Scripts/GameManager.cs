@@ -20,6 +20,11 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+    public bool IsSalmonFormUnlocked { get; private set; } = false;
+    public bool IsSlimeFormUnlocked { get; private set; } = true;  // slime form is unlocked by default
+    public bool IsCatFormUnlocked { get; private set; } = false;
+    public bool IsHumanFormUnlocked { get; private set; } = false;
+
 
 
     void Awake() {
@@ -31,5 +36,27 @@ public class GameManager : MonoBehaviour {
         }  
     }
 
-    
+    public void unlockForm(string formName) {
+        switch (formName) {
+            case "Salmon":
+                IsSalmonFormUnlocked = true;
+                Debug.Log("Salmon form unlocked");
+                break;
+            case "Slime":
+                IsSlimeFormUnlocked = true;
+                Debug.Log("Slime form unlocked");
+                break;
+            case "Cat":
+                IsCatFormUnlocked = true;
+                Debug.Log("Cat form unlocked");
+                break;
+            case "Human":
+                IsHumanFormUnlocked = true;
+                Debug.Log("Human form unlocked");
+                break;
+            default:
+                Debug.LogError("Invalid form name");
+                break;
+        }        
+    }
 }
