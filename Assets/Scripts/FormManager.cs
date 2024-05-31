@@ -34,7 +34,7 @@ public class FormManager : MonoBehaviour {
 
 
     void Update() {
-        if (currentForm.isPlayerGrounded || currentForm.inWater) {
+        if (currentForm.isPlayerGrounded || currentForm.inWater || currentForm.isWallSliding) {
 
             if (Input.GetKeyDown(KeyCode.X)) {
                 SwitchForm(slimeForm);

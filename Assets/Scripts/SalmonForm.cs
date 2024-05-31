@@ -24,6 +24,9 @@ public class SalmonForm : PlayerController {
     public float salmonAirControl = 0.9f;
     public float salmonAirGravityScale = 0.6f;
 
+    public float waterJumpTime = 2.0f; 
+    public float waterJumpCounter; 
+
 
  
 
@@ -44,7 +47,20 @@ public class SalmonForm : PlayerController {
             spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
             salmonSprite = pc.Sprites[1];
             flopForce = 0.6f;
+            waterJumpCounter = 0.0f;
         }
+
+
+    private void OnTriggerStay2D(Collider2D water) {
+        // if we are in water, change the flag. 
+        
+        if (water.gameObject.layer == waterLayer) {
+            inWater = true;
+        }
+        if (enabled) { 
+            rb.gravityScale = salmonGravityScale;
+        }
+    }
 
 
 
@@ -109,13 +125,22 @@ public class SalmonForm : PlayerController {
     protected override void Update() {
         moveInputX = Input.GetAxis("Horizontal");
         moveInputY = Input.GetAxis("Vertical");
-        MovePlayer();
+        if (isPlayerGrounded && !inWater) {
+            rb.velocity = new Vector2(0, 0);
+        }
+        if (inWater) {
+            MovePlayer();
+        } else {
+            // Flop();
+        }
         if (Input.GetKeyDown(KeyCode.Space)) {
-            if (inWater) {
+            if (inWater && waterJumpCounter <= 0) {
                 Jump();
-            } else {
-                Flop();
-            }
+                waterJumpCounter = waterJumpTime;
+            } 
+        }
+        if (waterJumpCounter >= 0) {
+            waterJumpCounter -= Time.deltaTime;
         }
 
         base.Update();

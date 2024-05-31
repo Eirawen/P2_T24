@@ -69,7 +69,6 @@ public class PlayerController : MonoBehaviour {
     protected virtual void Update() { // called every frame
         moveInputX = Input.GetAxis("Horizontal");
         isPlayerGrounded = isGrounded();
-        Debug.Log(moveInputX);
 
         if (DialogueManager.Instance != null && DialogueManager.Instance.isDialogueActive)
         {
@@ -189,7 +188,8 @@ public class PlayerController : MonoBehaviour {
             wallJumpingCounter = wallJumpingTime;
             CancelInvoke(nameof(stopWallJumping));
 
-        } else {
+        } else if (wallJumpingCounter > -1) {
+
             wallJumpingCounter -= Time.deltaTime;
         }
 
