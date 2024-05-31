@@ -10,11 +10,15 @@ public class FormManager : MonoBehaviour {
     public SlimeForm slimeForm;
     public CatForm catForm;
 
-    public PlayerController currentForm;
+
+    public Rigidbody2D rb;
+
+    public PlayerController currentForm; 
 
     
 
     void Start() {
+        rb = gameObject.GetComponent<Rigidbody2D>();
         baseController = gameObject.GetComponent<PlayerController>();
         baseController.enabled = true;
         salmonForm = gameObject.GetComponent<SalmonForm>();
@@ -24,19 +28,25 @@ public class FormManager : MonoBehaviour {
         catForm = gameObject.GetComponent<CatForm>();
         catForm.enabled = false;
         SwitchForm(slimeForm); // switch to slime at start of the game. 
+        currentForm = slimeForm;
 
     }
 
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.X)) {
-            SwitchForm(slimeForm);
-        }
-        if (Input.GetKeyDown(KeyCode.C)) {
-            SwitchForm(salmonForm);
-        }
-        if (Input.GetKeyDown(KeyCode.V)) {
-            SwitchForm(catForm);
+        if (currentForm.isPlayerGrounded || currentForm.inWater) {
+
+            if (Input.GetKeyDown(KeyCode.X)) {
+                SwitchForm(slimeForm);
+            }
+            if (Input.GetKeyDown(KeyCode.C)) {
+                SwitchForm(salmonForm);
+                rb.velocity = new Vector2(0, 0);
+                
+            }
+            if (Input.GetKeyDown(KeyCode.V)) {
+                SwitchForm(catForm);
+            }
         }
     }
 

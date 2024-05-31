@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class SalmonForm : PlayerController {
 
-    private bool inWater = false;
     private int waterLayer; 
 
     public float salmonJumpScale = 0.4f;
@@ -18,7 +17,7 @@ public class SalmonForm : PlayerController {
 
     public float salmonGravityScale = 0.3f; 
 
-    public float flopForce = 1.0f; 
+    public float flopForce;
 
     public float flopJumpScale = 0.1f; 
 
@@ -44,6 +43,7 @@ public class SalmonForm : PlayerController {
             pc = gameObject.GetComponent<PlayerController>();
             spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
             salmonSprite = pc.Sprites[1];
+            flopForce = 0.6f;
         }
 
 
@@ -102,7 +102,7 @@ public class SalmonForm : PlayerController {
             }
             Vector2 targetVelocity = new Vector2(x, y);
             rb.velocity = Vector2.SmoothDamp(rb.velocity, targetVelocity, ref velocitySmooth, movementSmooth);
-            Flop();
+            
         }
     }
 
@@ -113,6 +113,8 @@ public class SalmonForm : PlayerController {
         if (Input.GetKeyDown(KeyCode.Space)) {
             if (inWater) {
                 Jump();
+            } else {
+                Flop();
             }
         }
 

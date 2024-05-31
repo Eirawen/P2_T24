@@ -2,6 +2,7 @@ using UnityEngine;
 
 
 public class PlayerController : MonoBehaviour {
+    public bool inWater = false; 
     public float speed = 5.0f; // how fast the player moves by default
     public float jumpForce = 6.0f; // how high the player jumps
     public float movementSmooth = 0.1f; // how smooth the movement is, play around with this value
@@ -67,6 +68,7 @@ public class PlayerController : MonoBehaviour {
 
     protected virtual void Update() { // called every frame
         moveInputX = Input.GetAxis("Horizontal");
+        isPlayerGrounded = isGrounded();
         Debug.Log(moveInputX);
 
         if (DialogueManager.Instance != null && DialogueManager.Instance.isDialogueActive)
@@ -136,7 +138,7 @@ public class PlayerController : MonoBehaviour {
 
     public bool isMoving() {
         isPlayerGrounded = isGrounded();
-        return rb.velocity.x != 0 || !isPlayerGrounded ;
+        return rb.velocity.x > 0.1f || !isPlayerGrounded ;
     }
 
 
