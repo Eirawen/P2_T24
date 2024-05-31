@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class SalmonForm : PlayerController {
 
-    private bool inWater = false;
     private int waterLayer; 
 
     public float salmonJumpScale = 0.4f;
@@ -18,12 +17,15 @@ public class SalmonForm : PlayerController {
 
     public float salmonGravityScale = 0.3f; 
 
-    public float flopForce = 1.0f; 
+    public float flopForce;
 
     public float flopJumpScale = 0.1f; 
 
     public float salmonAirControl = 0.9f;
     public float salmonAirGravityScale = 0.6f;
+
+    public float waterJumpTime = 2.0f; 
+    public float waterJumpCounter; 
 
 
  
@@ -44,7 +46,21 @@ public class SalmonForm : PlayerController {
             pc = gameObject.GetComponent<PlayerController>();
             spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
             salmonSprite = pc.Sprites[1];
+            flopForce = 0.6f;
+            waterJumpCounter = 0.0f;
         }
+
+
+    private void OnTriggerStay2D(Collider2D water) {
+        // if we are in water, change the flag. 
+        
+        if (water.gameObject.layer == waterLayer) {
+            inWater = true;
+        }
+        if (enabled) { 
+            rb.gravityScale = salmonGravityScale;
+        }
+    }
 
 
 
@@ -90,10 +106,10 @@ public class SalmonForm : PlayerController {
                 velocity = 0;
             }
             switch (velocity) {
-                case float n when n > 0:
+                case float n when n > 0.1f:
                     x = speed * salmonAirControl;
                     break;
-                case float n when n < 0:
+                case float n when n < -0.1f:
                     x = -speed * salmonAirControl;
                     break;
                 default:
@@ -102,18 +118,27 @@ public class SalmonForm : PlayerController {
             }
             Vector2 targetVelocity = new Vector2(x, y);
             rb.velocity = Vector2.SmoothDamp(rb.velocity, targetVelocity, ref velocitySmooth, movementSmooth);
-            Flop();
+            
         }
     }
 
     protected override void Update() {
         moveInputX = Input.GetAxis("Horizontal");
         moveInputY = Input.GetAxis("Vertical");
-        MovePlayer();
+        
+        if (inWater) {
+            MovePlayer();
+        } else {
+            // Flop();
+        }
         if (Input.GetKeyDown(KeyCode.Space)) {
-            if (inWater) {
+            if (inWater && waterJumpCounter <= 0) {
                 Jump();
-            }
+                waterJumpCounter = waterJumpTime;
+            } 
+        }
+        if (waterJumpCounter >= 0) {
+            waterJumpCounter -= Time.deltaTime;
         }
 
         base.Update();
