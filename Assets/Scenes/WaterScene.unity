@@ -689,6 +689,11 @@ Transform:
   - {fileID: 1271335331}
   m_Father: {fileID: 1491114183}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &205010862 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1216342775397624, guid: 7b850c76b87127d438da06edb682525b, type: 3}
+  m_PrefabInstance: {fileID: 384643246}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &215059286
 GameObject:
   m_ObjectHideFlags: 0
@@ -1918,6 +1923,80 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 982056747370159615, guid: 86d38be4937d1c344b9c7f22912685eb, type: 3}
   m_PrefabInstance: {fileID: 375280406}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &384643246
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1769576442}
+    m_Modifications:
+    - target: {fileID: 1216342775397624, guid: 7b850c76b87127d438da06edb682525b, type: 3}
+      propertyPath: m_Name
+      value: +Speechbubble_6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4304282327499236, guid: 7b850c76b87127d438da06edb682525b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4304282327499236, guid: 7b850c76b87127d438da06edb682525b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4304282327499236, guid: 7b850c76b87127d438da06edb682525b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4304282327499236, guid: 7b850c76b87127d438da06edb682525b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.10824224
+      objectReference: {fileID: 0}
+    - target: {fileID: 4304282327499236, guid: 7b850c76b87127d438da06edb682525b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.6280185
+      objectReference: {fileID: 0}
+    - target: {fileID: 4304282327499236, guid: 7b850c76b87127d438da06edb682525b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4304282327499236, guid: 7b850c76b87127d438da06edb682525b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4304282327499236, guid: 7b850c76b87127d438da06edb682525b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4304282327499236, guid: 7b850c76b87127d438da06edb682525b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4304282327499236, guid: 7b850c76b87127d438da06edb682525b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4304282327499236, guid: 7b850c76b87127d438da06edb682525b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4304282327499236, guid: 7b850c76b87127d438da06edb682525b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4304282327499236, guid: 7b850c76b87127d438da06edb682525b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7b850c76b87127d438da06edb682525b, type: 3}
+--- !u!4 &384643247 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4304282327499236, guid: 7b850c76b87127d438da06edb682525b, type: 3}
+  m_PrefabInstance: {fileID: 384643246}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &397542586
 GameObject:
@@ -3487,7 +3566,7 @@ GameObject:
   - component: {fileID: 772562482}
   m_Layer: 6
   m_Name: pipe gate
-  m_TagString: sticky
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4948,6 +5027,7 @@ MonoBehaviour:
         name: Sam
         icon: {fileID: 21300000, guid: e013923e95d6c454b91b79cfaf3869a3, type: 3}
       line: We're going to have to jump over some trees that fell into the water!
+  attentionIcon: {fileID: 0}
   isAutomatic: 0
 --- !u!212 &906671546
 SpriteRenderer:
@@ -8032,6 +8112,7 @@ MonoBehaviour:
         name: Sam
         icon: {fileID: 21300000, guid: e013923e95d6c454b91b79cfaf3869a3, type: 3}
       line: We're going to have to be faster than ever to get through!
+  attentionIcon: {fileID: 0}
   isAutomatic: 0
 --- !u!61 &1633416875
 BoxCollider2D:
@@ -8776,6 +8857,7 @@ GameObject:
   - component: {fileID: 1769576441}
   - component: {fileID: 1769576443}
   - component: {fileID: 1769576444}
+  - component: {fileID: 1769576445}
   m_Layer: 0
   m_Name: salmon
   m_TagString: Untagged
@@ -8844,10 +8926,11 @@ Transform:
   m_GameObject: {fileID: 1769576440}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.098, y: 0.128, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 384643247}
   m_Father: {fileID: 135701140}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1769576443
@@ -8871,7 +8954,7 @@ MonoBehaviour:
 
 '
     - character:
-        name: 
+        name: Mesli
         icon: {fileID: 21300000, guid: 940c2e3ff5dba974b939eac8724c1902, type: 3}
       line: "Woah! \u2026 What are you?\r\n"
     - character:
@@ -8883,15 +8966,15 @@ MonoBehaviour:
         icon: {fileID: 21300000, guid: e013923e95d6c454b91b79cfaf3869a3, type: 3}
       line: You can call me Sally!
     - character:
-        name: 
+        name: Mesli
         icon: {fileID: 21300000, guid: 425a91ca25c91144289daa62f9564eac, type: 3}
       line: Salmon!?
     - character:
-        name: 
+        name: Mesli
         icon: {fileID: 21300000, guid: 425a91ca25c91144289daa62f9564eac, type: 3}
       line: Do you know of any place high off the ground?
     - character:
-        name: 
+        name: Mesli
         icon: {fileID: 21300000, guid: 425a91ca25c91144289daa62f9564eac, type: 3}
       line: " I\u2019m kind of an alien slime and need to fly my spaceship to get
         out of here."
@@ -8906,10 +8989,11 @@ MonoBehaviour:
       line: "Upstream is higher than downstream so that may help. You can follow
         me, but you\u2019ll need some fins and gills."
     - character:
-        name: 
+        name: Mesli
         icon: {fileID: 21300000, guid: 425a91ca25c91144289daa62f9564eac, type: 3}
       line: "Oh okay! Good thing I\u2019m a shapeshifting slime - I can just press
         'c'! \r "
+  attentionIcon: {fileID: 205010862}
   isAutomatic: 0
 --- !u!61 &1769576444
 BoxCollider2D:
@@ -8956,6 +9040,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.64, y: 0.64}
   m_EdgeRadius: 0
+--- !u!114 &1769576445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1769576440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbf3575480402db40813e763382412fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: 0
+  eraseRenderer: 0
 --- !u!1 &1801130493
 GameObject:
   m_ObjectHideFlags: 0
@@ -9309,6 +9407,7 @@ MonoBehaviour:
         icon: {fileID: 21300000, guid: e013923e95d6c454b91b79cfaf3869a3, type: 3}
       line: Can you help us? It seems like there's a small gap, but we're too big
         to fit...
+  attentionIcon: {fileID: 0}
   isAutomatic: 0
 --- !u!212 &2023032770
 SpriteRenderer:
@@ -9532,6 +9631,7 @@ GameObject:
   - component: {fileID: 2063612178}
   - component: {fileID: 2063612177}
   - component: {fileID: 2063612180}
+  - component: {fileID: 2063612181}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -9628,6 +9728,39 @@ MonoBehaviour:
   smoothSpeed: 6
   verticalOffset: 1.8
   orthographicSize: 6
+--- !u!114 &2063612181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2063612176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a78da3f00f3328541b4526c0b0b5ec5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lineThickness: 1.25
+  lineIntensity: 0.5
+  fillAmount: 0.2
+  lineColor0: {r: 1, g: 0, b: 0, a: 1}
+  lineColor1: {r: 0, g: 1, b: 0, a: 1}
+  lineColor2: {r: 0, g: 0, b: 1, a: 1}
+  additiveRendering: 0
+  backfaceCulling: 1
+  fillColor: {r: 0, g: 0, b: 1, a: 1}
+  useFillColor: 0
+  cornerOutlines: 0
+  addLinesBetweenColors: 0
+  scaleWithScreenSize: 1
+  alphaCutoff: 0.5
+  flipY: 0
+  sourceCamera: {fileID: 0}
+  autoEnableOutlines: 0
+  outlineCamera: {fileID: 0}
+  outlineShaderMaterial: {fileID: 0}
+  renderTexture: {fileID: 0}
+  extraRenderTexture: {fileID: 0}
 --- !u!1 &2074003781
 GameObject:
   m_ObjectHideFlags: 0

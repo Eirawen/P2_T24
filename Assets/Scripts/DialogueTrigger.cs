@@ -26,6 +26,7 @@ public class Dialogue
 public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue dialogue;
+    public GameObject attentionIcon;
     private bool isPlayerInTrigger = false;
     public bool isAutomatic = false;
     private bool hasPlayed = false;
@@ -38,17 +39,31 @@ public class DialogueTrigger : MonoBehaviour
 
     private void Update()
     {
-        
+        if (!isPlayerInTrigger && !hasPlayed && !isAutomatic && attentionIcon != null){
+            attentionIcon.GetComponent<SpriteRenderer>().enabled = true;
+
+        }
+
         if (isPlayerInTrigger && isAutomatic && !DialogueManager.Instance.isDialogueActive && !hasPlayed){
             TriggerDialogue();
         }
+
+        // colliding but haven't pressed E yet
+        // else if (isPlayerInTrigger && !Input.GetKeyDown(KeyCode.E) && !isAutomatic){
+        //     if (attentionIcon != null){
+        //         attentionIcon.GetComponent<SpriteRenderer>().enabled = true;
+        //     }
+        //         // attentionIcon.SetActive(true);
+        //     // GetComponent<LineRenderer>().enabled = true;
+        // }
         
         else if (isPlayerInTrigger && Input.GetKeyDown(KeyCode.E))
         {
             Debug.Log("Pressed E");
             Debug.Log(transform.position);
-            SoundManager.Instance.PlaySound3D("Jump", transform.position);
+            // SoundManager.Instance.PlaySound3D("Jump", transform.position);
             TriggerDialogue();
+            attentionIcon.GetComponent<SpriteRenderer>().enabled = false;
         }
     }
 
