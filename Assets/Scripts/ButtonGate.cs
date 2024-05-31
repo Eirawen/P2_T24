@@ -48,7 +48,7 @@ public class ButtonGate : MonoBehaviour
 
 
     void Update(){
-        if (!isMoving && isColliding && Input.GetKeyDown(KeyCode.F)){
+        if (!isMoving && isColliding && Input.GetKeyDown(KeyCode.E)){
             Debug.Log("Pay respects");
             isPressed = !isPressed;
             isMoving = true;

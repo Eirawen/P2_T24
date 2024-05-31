@@ -50,7 +50,7 @@ public class ButtonWater: MonoBehaviour{
             }
         }
 
-        if (!isMoving && isColliding && Input.GetKeyDown(KeyCode.F) && !buttonGate.isPressed){
+        if (!isMoving && isColliding && Input.GetKeyDown(KeyCode.E) && !buttonGate.isPressed){
             Debug.Log("Pay respects");
             isPressed = !isPressed;
             isMoving = true;
