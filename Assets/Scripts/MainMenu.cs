@@ -12,9 +12,12 @@ public class MainMenu : MonoBehaviour
     public Slider musicSlider;
     public Slider sfxSlider;
 
+    public GameObject optionsMenu; // options menu GameObject for in-game settings
+
     public void Start()
     {
         LoadVolume();
+        optionsMenu.SetActive(false); // Ensure options menu is initially inactive
     }
 
     public void Play()
@@ -53,5 +56,17 @@ public class MainMenu : MonoBehaviour
     {
         musicSlider.value = PlayerPrefs.GetFloat("MusicVolume");
         sfxSlider.value = PlayerPrefs.GetFloat("SFXVolume");
+    }
+
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (!optionsMenu.activeSelf)
+            {
+                SaveVolume();
+            }
+            optionsMenu.SetActive(!optionsMenu.activeSelf); // Toggle options menu
+        }
     }
 }

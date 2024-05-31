@@ -47,7 +47,7 @@ public class DialogueTrigger : MonoBehaviour
         {
             Debug.Log("Pressed E");
             Debug.Log(transform.position);
-            SoundManager.Instance.PlaySound3D("Jump", transform.position);
+            //SoundManager.Instance.PlaySound3D("Jump", transform.position);
             TriggerDialogue();
         }
     }
