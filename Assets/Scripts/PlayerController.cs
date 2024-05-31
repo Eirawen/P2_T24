@@ -60,7 +60,19 @@ public class PlayerController : MonoBehaviour {
         wallLayer = LayerMask.GetMask("Platform");
         gameObject.tag = "Player";
         wallCheck = transform.Find("WallCheck");
+        if (wallCheck == null) {
+            GameObject wallCheckObject = new GameObject("WallCheck");
+            wallCheckObject.transform.parent = transform;
+            wallCheckObject.transform.localPosition = new Vector3(0.3f, 0, 0);
+            wallCheck = wallCheckObject.transform;
+        }
         groundCheck = transform.Find("GroundCheck");
+        if (groundCheck == null) {
+            GameObject groundCheckObject = new GameObject("GroundCheck");
+            groundCheckObject.transform.parent = transform;
+            groundCheckObject.transform.localPosition = new Vector3(0, -0.3f, 0);
+            groundCheck = groundCheckObject.transform;
+        }
     }
     void Start() { // called when the script is first initialized
         
@@ -160,7 +172,7 @@ public class PlayerController : MonoBehaviour {
         bool isWalledy = isWalled();
         if (isWalledy && !isPlayerGrounded) {
             isWallSliding = true;
-            Debug.Log(isWallSliding);
+            Debug.Log(isWalledy);
             rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSlideSpeed, float.MaxValue));
         } else {
             isWallSliding = false;

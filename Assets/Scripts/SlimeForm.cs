@@ -64,6 +64,15 @@ public class SlimeForm : PlayerController {
         }
     }
 
+    void OnCollisionStay2D(Collision2D collision) {
+        if (isSticky(collision)) {
+            if (!onWall) {
+                onWall = true;
+                stickToWall();
+            }
+        }
+    }
+
     void OnCollisionExit2D(Collision2D collision) {
         if (isSticky(collision)) {
             onWall = false;

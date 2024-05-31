@@ -106,10 +106,10 @@ public class SalmonForm : PlayerController {
                 velocity = 0;
             }
             switch (velocity) {
-                case float n when n > 0:
+                case float n when n > 0.1f:
                     x = speed * salmonAirControl;
                     break;
-                case float n when n < 0:
+                case float n when n < -0.1f:
                     x = -speed * salmonAirControl;
                     break;
                 default:
@@ -125,9 +125,7 @@ public class SalmonForm : PlayerController {
     protected override void Update() {
         moveInputX = Input.GetAxis("Horizontal");
         moveInputY = Input.GetAxis("Vertical");
-        if (isPlayerGrounded && !inWater) {
-            rb.velocity = new Vector2(0, 0);
-        }
+        
         if (inWater) {
             MovePlayer();
         } else {
