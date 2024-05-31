@@ -14,6 +14,10 @@ public class CatForm : PlayerController {
     private BoxCollider2D boxCollider; 
 
 
+    public float forceSmooth = 100.0f;
+    public float upwardScale = 3.0f; 
+
+
     protected override void Awake() {
         base.Awake();
         pc = gameObject.GetComponent<PlayerController>();
@@ -30,19 +34,32 @@ public class CatForm : PlayerController {
         moveInputX = Input.GetAxis("Horizontal");
         moveInputY = Input.GetAxis("Vertical");
 
-        base.MovePlayer();
+        if (!isWallJumping) {
+            base.MovePlayer();
+        }
         if (Input.GetKeyDown(KeyCode.Space)) {
-            Jump();
+            if (canJump()) {
+                Jump();
+            }
         }
 
         base.Update();
 
     }
 
+ 
 
 
+    public void catJump() {
+        Vector2 jumpUp = Vector2.up * upwardScale;
+        Vector2 jumpDirection = jumpUp + lastContactNormal;
+        jumpDirection.Normalize();
+        rb.AddForce(jumpDirection * jumpForce * catJumpScale * forceSmooth, ForceMode2D.Force);
+    }
     protected override void Jump() {
+
         if (canJump()) {
+
             rb.AddForce(Vector2.up * jumpForce * catJumpScale, ForceMode2D.Impulse);
         }
     }
@@ -54,12 +71,16 @@ public class CatForm : PlayerController {
     }
 
     private bool canJump() {
-        return isPlayerGrounded || onWall;
+        return isPlayerGrounded && !isWallSliding; 
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
         if (catWallCheck(collision)) {
             onWall = true;
+            if (collision.contacts.Length > 0) {
+                lastContactNormal = collision.contacts[0].normal;
+                Debug.Log("Wall normal: " + lastContactNormal);
+            }
         }
     }
 

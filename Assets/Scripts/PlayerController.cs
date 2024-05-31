@@ -9,10 +9,27 @@ public class PlayerController : MonoBehaviour {
     public float airControl = 0.9f; // how much control the player has in the air
     public float normalGravityScale = 1.0f; // how much gravity affects the player
     public LayerMask groundLayer; //defines the ground layer - useful for checking collision with the ground
+    public LayerMask wallLayer; //defines the wall layer - useful for checking collision with the wall
     protected Rigidbody2D rb; // rigidbody2d is the unity physics component that allows the player to move
     protected Vector2 velocitySmooth = Vector2.zero; // smooths out the movement
     public bool isPlayerGrounded; // checks if the player is on the ground
     public bool isPlayerMoving; // checks if the player is moving
+    protected Vector2 lastContactNormal;
+    protected bool isFacingRight = true;
+
+    public bool isWallSliding;
+    public float wallSlideSpeed = 2f;
+
+    public bool isWallJumping;
+    public float wallJumpingDirection;
+    public float wallJumpingTime = 0.2f; 
+    public float wallJumpingCounter;
+    public float wallJumpingDuration = 0.4f; 
+
+
+    public Transform wallCheck;
+    public Transform groundCheck;
+
 
     protected float moveInput; // stores the player's input for movement
     protected float moveInputX;
@@ -37,14 +54,21 @@ public class PlayerController : MonoBehaviour {
             Debug.LogWarning("Rigidbody2d component not found, adding one automatically");
             
         }
-        groundLayer = LayerMask.GetMask("Ground");
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;  // no more flipping upside down
+        groundLayer = LayerMask.GetMask("Ground", "Platform");
+        wallLayer = LayerMask.GetMask("Platform");
         gameObject.tag = "Player";
+        wallCheck = transform.Find("WallCheck");
+        groundCheck = transform.Find("GroundCheck");
     }
     void Start() { // called when the script is first initialized
         
     }
 
     protected virtual void Update() { // called every frame
+        moveInputX = Input.GetAxis("Horizontal");
+        Debug.Log(moveInputX);
+
         if (DialogueManager.Instance != null && DialogueManager.Instance.isDialogueActive)
         {
             moveInput = 0f;
@@ -68,7 +92,18 @@ public class PlayerController : MonoBehaviour {
             returnToCheckpoint();
         }
 
+        WallSlide();
+        WallJump();
+
+
+        if (!isWallJumping) {
+            Flip();
+        }
+
+
+
     }
+    
 
     protected virtual void MovePlayer() { // defines player movement
         float x = moveInputX * speed;
@@ -95,8 +130,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     protected bool isGrounded() {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, groundCheckDistance, groundLayer);
-        return hit.collider != null;
+        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     }
 
 
@@ -115,6 +149,70 @@ public class PlayerController : MonoBehaviour {
     {
         GameObject.FindGameObjectWithTag("Player").transform.position = lastCheckPointPos;
     }
+    
+
+    private bool isWalled() {
+        return Physics2D.OverlapCircle(wallCheck.position, 0.2f, wallLayer);
+    }   
+
+    protected void WallSlide() {
+        bool isWalledy = isWalled();
+        if (isWalledy && !isPlayerGrounded) {
+            isWallSliding = true;
+            Debug.Log(isWallSliding);
+            rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSlideSpeed, float.MaxValue));
+        } else {
+            isWallSliding = false;
+        }
+    }
+
+    protected void Flip() {
+        if (moveInputX < 0) {
+            isFacingRight = false;
+            Vector3 localScale = transform.localScale;
+            localScale.x = -1f;
+            transform.localScale = localScale;
+        } else if (moveInputX > 0) {
+            isFacingRight = true;
+            Vector3 localScale = transform.localScale;
+            localScale.x = 1f;
+            transform.localScale = localScale;
+        }
+    }
+
+    protected void WallJump() {
+        if (isWallSliding) {
+            isWallJumping = false; 
+            wallJumpingDirection = -transform.localScale.x;
+            wallJumpingCounter = wallJumpingTime;
+            CancelInvoke(nameof(stopWallJumping));
+
+        } else {
+            wallJumpingCounter -= Time.deltaTime;
+        }
+
+        if (wallJumpingCounter > 0 && Input.GetKeyDown(KeyCode.Space)) {
+            isWallJumping = true;
+            rb.velocity = new Vector2(wallJumpingDirection * speed, jumpForce);
+            wallJumpingCounter = 0;
+
+            if (transform.localScale.x != wallJumpingDirection) {
+                Vector3 localScale = transform.localScale;
+                localScale.x *= -1f;
+                transform.localScale = localScale;
+            }
+
+            Invoke(nameof(stopWallJumping), wallJumpingDuration);
+        }
+    }
+
+    protected void stopWallJumping() {
+        isWallJumping = false;
+    }
+
+
+        
+
 }
 
 

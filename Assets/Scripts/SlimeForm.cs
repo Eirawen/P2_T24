@@ -72,14 +72,15 @@ public class SlimeForm : PlayerController {
     }
 
     private void stickToWall() {
-        if (onWall) {
+        if (onWall && enabled) {
             rb.velocity = new Vector2(rb.velocity.x, 0);
             rb.gravityScale = slimeGravityScale;
+            
         }
     }
 
     private void unstickFromWall() {
-        if (!onWall) {
+        if (!onWall && enabled) {
             rb.velocity = new Vector2(rb.velocity.x, 0);
             rb.gravityScale = normalGravityScale;
         }
