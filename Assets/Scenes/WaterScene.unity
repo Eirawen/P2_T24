@@ -332,7 +332,7 @@ Transform:
   m_GameObject: {fileID: 106194565}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -8.66, y: 0.12, z: 0}
   m_LocalScale: {x: 2.3485, y: 2.3485, z: 2.3485}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4637,9 +4637,9 @@ GameObject:
   - component: {fileID: 867967621}
   - component: {fileID: 867967624}
   - component: {fileID: 867967625}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: slime_1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4705,7 +4705,7 @@ Transform:
   m_GameObject: {fileID: 867967616}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -68.48, y: 4.67, z: 0}
+  m_LocalPosition: {x: 179.29, y: -0.7, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6218,6 +6218,10 @@ PrefabInstance:
     - target: {fileID: 982056747370159609, guid: d0bde9a42898be64ab7372c560194d8d, type: 3}
       propertyPath: m_Name
       value: PF Village Props - Wood Logs
+      objectReference: {fileID: 0}
+    - target: {fileID: 982056747370159609, guid: d0bde9a42898be64ab7372c560194d8d, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 982056747370159614, guid: d0bde9a42898be64ab7372c560194d8d, type: 3}
       propertyPath: m_SortingOrder
@@ -9230,7 +9234,7 @@ Transform:
   m_GameObject: {fileID: 1721472562}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.720001, y: 0.17000008, z: 0}
+  m_LocalPosition: {x: -0.08, y: 0.17000008, z: 0}
   m_LocalScale: {x: 2.3485, y: 2.3485, z: 2.3485}
   m_ConstrainProportionsScale: 0
   m_Children: []
