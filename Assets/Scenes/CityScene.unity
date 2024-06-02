@@ -1107,6 +1107,7 @@ MonoBehaviour:
         name: lost cat
         icon: {fileID: 21300000, guid: d1beee84d07c942b9b377d2ed0a964c0, type: 3}
       line: bye bye now
+  attentionIcon: {fileID: 0}
   isAutomatic: 0
 --- !u!61 &112635909
 BoxCollider2D:
@@ -1186,6 +1187,81 @@ Transform:
   - {fileID: 1282042416}
   m_Father: {fileID: 522675104}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &165130750
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 165130751}
+  - component: {fileID: 165130753}
+  - component: {fileID: 165130752}
+  m_Layer: 5
+  m_Name: SalmonHotkey
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &165130751
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165130750}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 1, z: 3.3334997}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 800110470}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 442.3, y: 140}
+  m_SizeDelta: {x: 60, y: 60}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &165130752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165130750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: b4d8b4a9fb78247ce9c79a9b98e66065, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &165130753
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165130750}
+  m_CullTransparentMesh: 1
 --- !u!1 &169731336
 GameObject:
   m_ObjectHideFlags: 0
@@ -1227,6 +1303,7 @@ MonoBehaviour:
         name: Mesli
         icon: {fileID: 21300000, guid: 961a02b51f67c264da28823fcd98761a, type: 3}
       line: What is that sound?
+  attentionIcon: {fileID: 0}
   isAutomatic: 1
 --- !u!61 &169731338
 BoxCollider2D:
@@ -2686,6 +2763,7 @@ MonoBehaviour:
         icon: {fileID: 21300000, guid: d1beee84d07c942b9b377d2ed0a964c0, type: 3}
       line: There are a lot of stray cats in this town.. Maybe you can talk to them
         for the password...
+  attentionIcon: {fileID: 0}
   isAutomatic: 0
 --- !u!61 &446016709
 BoxCollider2D:
@@ -3480,6 +3558,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 580111145}
   m_CullTransparentMesh: 1
+--- !u!1 &596508127
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 596508129}
+  - component: {fileID: 596508128}
+  m_Layer: 0
+  m_Name: sidebar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &596508128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596508127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd1f81d2c756044cc8bd37b16bdf76b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slimeHotkey: {fileID: 877755342}
+  slimeOff: {fileID: 21300000, guid: 30d8d634ec20b4995a9d3c5f071eb85e, type: 3}
+  slimeOn: {fileID: 21300000, guid: aaef49b90cd504f0ebca5994a9402e0f, type: 3}
+  fishHotkey: {fileID: 165130752}
+  fishOff: {fileID: 21300000, guid: 848f3474ca98e4c088b93739263375ad, type: 3}
+  fishOn: {fileID: 21300000, guid: b4d8b4a9fb78247ce9c79a9b98e66065, type: 3}
+  catHotkey: {fileID: 2029929115}
+  catOff: {fileID: 21300000, guid: 26160e0d2c47547ee8ffec990a6c5ff4, type: 3}
+  catOn: {fileID: 21300000, guid: bd91169eb09514163a4d8e2f3f50be00, type: 3}
+  birdHotkey: {fileID: 1624061112}
+  birdOff: {fileID: 21300000, guid: b1e6b0d383a5e4710ade1f18dc668012, type: 3}
+  birdOn: {fileID: 21300000, guid: 84bc092cd141241f58db4d136eb5e726, type: 3}
+--- !u!4 &596508129
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596508127}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 96.038445, y: 11.59439, z: 8.903273}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &601830849
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4120,6 +4254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baf4b903a7a97414fbbbb560869be177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inWater: 0
   speed: 5
   jumpForce: 6
   movementSmooth: 0.1
@@ -4129,8 +4264,20 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 0
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 0
   isPlayerGrounded: 0
   isPlayerMoving: 0
+  isWallSliding: 0
+  wallSlideSpeed: 2
+  isWallJumping: 0
+  wallJumpingDirection: 0
+  wallJumpingTime: 0.2
+  wallJumpingCounter: 0
+  wallJumpingDuration: 0.4
+  wallCheck: {fileID: 0}
+  groundCheck: {fileID: 0}
   Sprites: []
   currentSprite: {fileID: 0}
   onWall: 0
@@ -4142,6 +4289,8 @@ MonoBehaviour:
   catJumpLayer:
     serializedVersion: 2
     m_Bits: 0
+  forceSmooth: 100
+  upwardScale: 3
 --- !u!114 &699620117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4154,6 +4303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b599d0c13d39bc4ebe0547207a07b9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inWater: 0
   speed: 5
   jumpForce: 6
   movementSmooth: 0.1
@@ -4163,8 +4313,20 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 0
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 0
   isPlayerGrounded: 0
   isPlayerMoving: 0
+  isWallSliding: 0
+  wallSlideSpeed: 2
+  isWallJumping: 0
+  wallJumpingDirection: 0
+  wallJumpingTime: 0.2
+  wallJumpingCounter: 0
+  wallJumpingDuration: 0.4
+  wallCheck: {fileID: 0}
+  groundCheck: {fileID: 0}
   Sprites: []
   currentSprite: {fileID: 0}
   salmonJumpScale: 0.4
@@ -4176,6 +4338,8 @@ MonoBehaviour:
   flopJumpScale: 0.1
   salmonAirControl: 0.9
   salmonAirGravityScale: 0.6
+  waterJumpTime: 2
+  waterJumpCounter: 0
 --- !u!114 &699620118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4188,6 +4352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604f9b6230a5937429d8bfe1bbc3908e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inWater: 0
   speed: 5
   jumpForce: 6
   movementSmooth: 0.1
@@ -4197,8 +4362,20 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 0
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 0
   isPlayerGrounded: 0
   isPlayerMoving: 0
+  isWallSliding: 0
+  wallSlideSpeed: 2
+  isWallJumping: 0
+  wallJumpingDirection: 0
+  wallJumpingTime: 0.2
+  wallJumpingCounter: 0
+  wallJumpingDuration: 0.4
+  wallCheck: {fileID: 0}
+  groundCheck: {fileID: 0}
   Sprites: []
   currentSprite: {fileID: 0}
   slimeSprite: {fileID: 21300000, guid: 425a91ca25c91144289daa62f9564eac, type: 3}
@@ -4227,6 +4404,7 @@ MonoBehaviour:
   salmonForm: {fileID: 0}
   slimeForm: {fileID: 0}
   catForm: {fileID: 0}
+  rb: {fileID: 0}
   currentForm: {fileID: 0}
 --- !u!61 &699620120
 BoxCollider2D:
@@ -4285,6 +4463,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0488865b3654234b83eda446a7e04cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inWater: 0
   speed: 5
   jumpForce: 6
   movementSmooth: 0.1
@@ -4294,8 +4473,20 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 0
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 0
   isPlayerGrounded: 0
   isPlayerMoving: 0
+  isWallSliding: 0
+  wallSlideSpeed: 2
+  isWallJumping: 0
+  wallJumpingDirection: 0
+  wallJumpingTime: 0.2
+  wallJumpingCounter: 0
+  wallJumpingDuration: 0.4
+  wallCheck: {fileID: 0}
+  groundCheck: {fileID: 0}
   Sprites:
   - {fileID: 21300000, guid: 425a91ca25c91144289daa62f9564eac, type: 3}
   - {fileID: 21300000, guid: 08bab00995436b741b0f67332e11db0d, type: 3}
@@ -5271,6 +5462,10 @@ RectTransform:
   - {fileID: 901791806}
   - {fileID: 1122177924}
   - {fileID: 414086269}
+  - {fileID: 877755341}
+  - {fileID: 165130751}
+  - {fileID: 1624061111}
+  - {fileID: 2029929114}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -5432,6 +5627,81 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba054653201b646159c1f24fb2bd9122, type: 3}
+--- !u!1 &877755340
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 877755341}
+  - component: {fileID: 877755343}
+  - component: {fileID: 877755342}
+  m_Layer: 5
+  m_Name: SlimeHotkey
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &877755341
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877755340}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 1, z: 3.3334997}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 800110470}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 442.3, y: 220}
+  m_SizeDelta: {x: 60, y: 60}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &877755342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877755340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: aaef49b90cd504f0ebca5994a9402e0f, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &877755343
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877755340}
+  m_CullTransparentMesh: 1
 --- !u!1 &879628516
 GameObject:
   m_ObjectHideFlags: 0
@@ -6906,6 +7176,7 @@ MonoBehaviour:
         name: Cuddles
         icon: {fileID: 21300000, guid: d1beee84d07c942b9b377d2ed0a964c0, type: 3}
       line: Poor thing.. his name is bright and pointed.
+  attentionIcon: {fileID: 0}
   isAutomatic: 0
 --- !u!61 &991321409
 BoxCollider2D:
@@ -7355,6 +7626,7 @@ MonoBehaviour:
       line: 'Got it!
 
 '
+  attentionIcon: {fileID: 0}
   isAutomatic: 0
 --- !u!61 &1036734660
 BoxCollider2D:
@@ -8470,6 +8742,7 @@ MonoBehaviour:
         name: 
         icon: {fileID: 0}
       line: Press "space" to jump!
+  attentionIcon: {fileID: 0}
   isAutomatic: 1
 --- !u!61 &1177201027
 BoxCollider2D:
@@ -11075,6 +11348,7 @@ MonoBehaviour:
         name: Sir Whiskers
         icon: {fileID: 21300000, guid: d1beee84d07c942b9b377d2ed0a964c0, type: 3}
       line: His name is often seen in the night sky, guiding travelers with light.
+  attentionIcon: {fileID: 0}
   isAutomatic: 0
 --- !u!61 &1462221237
 BoxCollider2D:
@@ -12252,6 +12526,81 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 204595360797689455, guid: ba054653201b646159c1f24fb2bd9122, type: 3}
   m_PrefabInstance: {fileID: 1567713330}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1624061110
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1624061111}
+  - component: {fileID: 1624061113}
+  - component: {fileID: 1624061112}
+  m_Layer: 5
+  m_Name: BirtHotkey
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1624061111
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624061110}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 1, z: 3.3334997}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 800110470}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 442.3, y: -20}
+  m_SizeDelta: {x: 60, y: 60}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1624061112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624061110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 84bc092cd141241f58db4d136eb5e726, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1624061113
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624061110}
+  m_CullTransparentMesh: 1
 --- !u!1 &1638034943
 GameObject:
   m_ObjectHideFlags: 0
@@ -12456,6 +12805,7 @@ MonoBehaviour:
         name: Mittens
         icon: {fileID: 21300000, guid: d1beee84d07c942b9b377d2ed0a964c0, type: 3}
       line: His name is often found on the Hollywood Walk of Fame.
+  attentionIcon: {fileID: 0}
   isAutomatic: 0
 --- !u!1 &1644905560
 GameObject:
@@ -13936,6 +14286,7 @@ MonoBehaviour:
         name: 
         icon: {fileID: 0}
       line: You can high jump over objects!
+  attentionIcon: {fileID: 0}
   isAutomatic: 1
 --- !u!61 &1866141372
 BoxCollider2D:
@@ -14498,6 +14849,7 @@ MonoBehaviour:
         name: Smokey
         icon: {fileID: 21300000, guid: d1beee84d07c942b9b377d2ed0a964c0, type: 3}
       line: People wish upon his name when it shoots across the sky
+  attentionIcon: {fileID: 0}
   isAutomatic: 0
 --- !u!1 &1996469815
 GameObject:
@@ -14804,6 +15156,81 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1709219332}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2029929113
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2029929114}
+  - component: {fileID: 2029929116}
+  - component: {fileID: 2029929115}
+  m_Layer: 5
+  m_Name: CatHotkey
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2029929114
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029929113}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 1, z: 3.3334997}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 800110470}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 442.3, y: 60}
+  m_SizeDelta: {x: 60, y: 60}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2029929115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029929113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: bd91169eb09514163a4d8e2f3f50be00, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &2029929116
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029929113}
+  m_CullTransparentMesh: 1
 --- !u!1 &2033954127
 GameObject:
   m_ObjectHideFlags: 0
@@ -15451,3 +15878,4 @@ SceneRoots:
   - {fileID: 894149553}
   - {fileID: 1709219332}
   - {fileID: 34026397}
+  - {fileID: 596508129}
