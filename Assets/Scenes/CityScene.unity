@@ -4433,7 +4433,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &596508128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4446,7 +4446,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd1f81d2c756044cc8bd37b16bdf76b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slimeHotkey: {fileID: 877755342}
+  slimeHotkey: {fileID: 2029929115}
   slimeOff: {fileID: 21300000, guid: 30d8d634ec20b4995a9d3c5f071eb85e, type: 3}
   slimeOn: {fileID: 21300000, guid: aaef49b90cd504f0ebca5994a9402e0f, type: 3}
   fishHotkey: {fileID: 165130752}
@@ -4455,9 +4455,6 @@ MonoBehaviour:
   catHotkey: {fileID: 2029929115}
   catOff: {fileID: 21300000, guid: 26160e0d2c47547ee8ffec990a6c5ff4, type: 3}
   catOn: {fileID: 21300000, guid: bd91169eb09514163a4d8e2f3f50be00, type: 3}
-  birdHotkey: {fileID: 1624061112}
-  birdOff: {fileID: 21300000, guid: b1e6b0d383a5e4710ade1f18dc668012, type: 3}
-  birdOn: {fileID: 21300000, guid: 84bc092cd141241f58db4d136eb5e726, type: 3}
 --- !u!4 &596508129
 Transform:
   m_ObjectHideFlags: 0
@@ -5001,7 +4998,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 843646735}
   - {fileID: 1343898127}
   m_Father: {fileID: 1761153803}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6393,9 +6389,7 @@ RectTransform:
   - {fileID: 901791806}
   - {fileID: 1122177924}
   - {fileID: 414086269}
-  - {fileID: 877755341}
   - {fileID: 165130751}
-  - {fileID: 1624061111}
   - {fileID: 2029929114}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6582,206 +6576,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba054653201b646159c1f24fb2bd9122, type: 3}
-<<<<<<< HEAD
---- !u!1 &877755340
-=======
---- !u!1 &843646734
->>>>>>> ab6b12b (Higher fidelity city level with art assets. Removed case sensitive password and adjusted wall jump puzzle.)
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-<<<<<<< HEAD
-  - component: {fileID: 877755341}
-  - component: {fileID: 877755343}
-  - component: {fileID: 877755342}
-  m_Layer: 5
-  m_Name: SlimeHotkey
-  m_TagString: Untagged
-=======
-  - component: {fileID: 843646735}
-  - component: {fileID: 843646737}
-  - component: {fileID: 843646736}
-  m_Layer: 6
-  m_Name: arch opened
-  m_TagString: sticky
->>>>>>> ab6b12b (Higher fidelity city level with art assets. Removed case sensitive password and adjusted wall jump puzzle.)
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
-<<<<<<< HEAD
---- !u!224 &877755341
-RectTransform:
-=======
---- !u!4 &843646735
-Transform:
->>>>>>> ab6b12b (Higher fidelity city level with art assets. Removed case sensitive password and adjusted wall jump puzzle.)
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-  m_GameObject: {fileID: 877755340}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 1, z: 3.3334997}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 800110470}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 442.3, y: 220}
-  m_SizeDelta: {x: 60, y: 60}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &877755342
-MonoBehaviour:
-=======
-  m_GameObject: {fileID: 843646734}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 72.22, y: -1.0999999, z: 0.016301155}
-  m_LocalScale: {x: 2.9976, y: 2.9976, z: 2.9976}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 660474733}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &843646736
-BoxCollider2D:
->>>>>>> ab6b12b (Higher fidelity city level with art assets. Removed case sensitive password and adjusted wall jump puzzle.)
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-  m_GameObject: {fileID: 877755340}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: aaef49b90cd504f0ebca5994a9402e0f, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &877755343
-CanvasRenderer:
-=======
-  m_GameObject: {fileID: 843646734}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.43082094}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.4, y: 3.86}
-    newSize: {x: 1.39, y: 3.86}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.4, y: 2.9983582}
-  m_EdgeRadius: 0
---- !u!212 &843646737
-SpriteRenderer:
->>>>>>> ab6b12b (Higher fidelity city level with art assets. Removed case sensitive password and adjusted wall jump puzzle.)
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-  m_GameObject: {fileID: 877755340}
-  m_CullTransparentMesh: 1
-=======
-  m_GameObject: {fileID: 843646734}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0f61743c41a824e2b883dae244eef0d0, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1.39, y: 3.86}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
->>>>>>> ab6b12b (Higher fidelity city level with art assets. Removed case sensitive password and adjusted wall jump puzzle.)
 --- !u!1 &879628516
 GameObject:
   m_ObjectHideFlags: 0
@@ -13034,117 +12828,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 204595360797689455, guid: ba054653201b646159c1f24fb2bd9122, type: 3}
   m_PrefabInstance: {fileID: 1567713330}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
---- !u!1 &1624061110
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1624061111}
-  - component: {fileID: 1624061113}
-  - component: {fileID: 1624061112}
-  m_Layer: 5
-  m_Name: BirtHotkey
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1624061111
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1624061110}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 1, z: 3.3334997}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 800110470}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 442.3, y: -20}
-  m_SizeDelta: {x: 60, y: 60}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1624061112
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1624061110}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 84bc092cd141241f58db4d136eb5e726, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1624061113
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1624061110}
-  m_CullTransparentMesh: 1
---- !u!1 &1638034943
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1638034944}
-  m_Layer: 0
-  m_Name: Bench 1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1638034944
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1638034943}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 49320813}
-  - {fileID: 1543879146}
-  m_Father: {fileID: 1462405579}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-=======
->>>>>>> ab6b12b (Higher fidelity city level with art assets. Removed case sensitive password and adjusted wall jump puzzle.)
 --- !u!1 &1640569219
 GameObject:
   m_ObjectHideFlags: 0
@@ -13154,9 +12837,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1640569220}
-  - component: {fileID: 1640569223}
-  - component: {fileID: 1640569222}
   - component: {fileID: 1640569224}
+  - component: {fileID: 1640569222}
+  - component: {fileID: 1640569223}
   m_Layer: 0
   m_Name: Cat 1
   m_TagString: Untagged
@@ -13264,6 +12947,7 @@ MonoBehaviour:
         name: Mittens
         icon: {fileID: 21300000, guid: 010a6aec2f8dc479d92a8af1f89715b9, type: 3}
       line: His name is often found on the Hollywood Walk of Fame.
+  attentionIcon: {fileID: 0}
   isAutomatic: 0
 --- !u!212 &1640569224
 SpriteRenderer:
@@ -13317,96 +13001,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
-<<<<<<< HEAD
---- !u!61 &1640569222
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1640569219}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.64, y: 0.64}
-  m_EdgeRadius: 0
---- !u!114 &1640569223
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1640569219}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f8edadce699c47a7b4e6635b74494ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    dialogueLines:
-    - character:
-        name: Mittens
-        icon: {fileID: 21300000, guid: d1beee84d07c942b9b377d2ed0a964c0, type: 3}
-      line: What brings you here?
-    - character:
-        name: Mesli
-        icon: {fileID: 21300000, guid: 425a91ca25c91144289daa62f9564eac, type: 3}
-      line: 'I ran away from home and crashed here by accident.
-
-'
-    - character:
-        name: Mittens
-        icon: {fileID: 21300000, guid: d1beee84d07c942b9b377d2ed0a964c0, type: 3}
-      line: Ran away from home?
-    - character:
-        name: Mesli
-        icon: {fileID: 21300000, guid: 425a91ca25c91144289daa62f9564eac, type: 3}
-      line: "Yeah\u2026my parents were not the most supportive of me\u2026\n"
-    - character:
-        name: Mittens
-        icon: {fileID: 21300000, guid: d1beee84d07c942b9b377d2ed0a964c0, type: 3}
-      line: Well, I'll help you out. There's a bodyguard at the edge of the city.
-    - character:
-        name: Mittens
-        icon: {fileID: 21300000, guid: d1beee84d07c942b9b377d2ed0a964c0, type: 3}
-      line: His name is often found on the Hollywood Walk of Fame.
-  attentionIcon: {fileID: 0}
-  isAutomatic: 0
-=======
->>>>>>> ab6b12b (Higher fidelity city level with art assets. Removed case sensitive password and adjusted wall jump puzzle.)
 --- !u!1 &1644905560
 GameObject:
   m_ObjectHideFlags: 0

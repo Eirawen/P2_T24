@@ -61,11 +61,7 @@ public class DialogueTrigger : MonoBehaviour
         {
             Debug.Log("Pressed E");
             Debug.Log(transform.position);
-<<<<<<< HEAD
-            // //SoundManager.Instance.PlaySound3D("Jump", transform.position);
-=======
             SoundManager.Instance.PlaySound3D("Interact", transform.position);
->>>>>>> ab6b12b (Higher fidelity city level with art assets. Removed case sensitive password and adjusted wall jump puzzle.)
             TriggerDialogue();
             attentionIcon.GetComponent<SpriteRenderer>().enabled = false;
         }
