@@ -25,7 +25,7 @@ public class SideBar : MonoBehaviour
     void Start ()
 	{
 		// Create a temporary reference to the current scene.
-		Scene currentScene = SceneManager.GetActiveScene ();
+		Scene currentScene = SceneManager.GetActiveScene();
 
 		// Retrieve the name of this scene.
 		string sceneName = currentScene.name;

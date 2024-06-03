@@ -192,11 +192,6 @@ public class PlayerController : MonoBehaviour {
             transform.localScale = localScale;
         } else if (moveInputX > 0) {
             isFacingRight = true;
-<<<<<<< HEAD
-=======
-            Vector3 localScale = transform.localScale;
-            float twoCheck = Mathf.Abs(localScale.x);
->>>>>>> origin/main
             if (twoCheck >= 2) {
                 localScale.x = 2f;
             } else {
