@@ -36,15 +36,15 @@ public class FormManager : MonoBehaviour {
     void Update() {
         if (currentForm.isPlayerGrounded || currentForm.inWater || currentForm.isWallSliding) {
 
-            if (Input.GetKeyDown(KeyCode.X)) {
+            if (Input.GetKeyDown(KeyCode.S)) {
                 SwitchForm(slimeForm);
             }
-            if (Input.GetKeyDown(KeyCode.C)) {
+            if (Input.GetKeyDown(KeyCode.F)) {
                 SwitchForm(salmonForm);
                 rb.velocity = new Vector2(0, 0);
                 
             }
-            if (Input.GetKeyDown(KeyCode.V)) {
+            if (Input.GetKeyDown(KeyCode.C)) {
                 SwitchForm(catForm);
             }
         }

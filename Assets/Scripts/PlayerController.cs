@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour {
     }
 
     protected virtual void Update() { // called every frame
-        moveInputX = Input.GetAxis("Horizontal");
+        moveInputX = Input.GetAxisRaw("Horizontal");
         isPlayerGrounded = isGrounded();
 
         if (DialogueManager.Instance != null && DialogueManager.Instance.isDialogueActive)
@@ -180,15 +180,23 @@ public class PlayerController : MonoBehaviour {
     }
 
     protected void Flip() {
+        Vector3 localScale = transform.localScale;
+        float twoCheck = Mathf.Abs(localScale.x);
         if (moveInputX < 0) {
             isFacingRight = false;
-            Vector3 localScale = transform.localScale;
-            localScale.x = -1f;
+            if (twoCheck >= 2) {
+                localScale.x = -2f;
+            } else {
+                localScale.x *= -1f;
+            }
             transform.localScale = localScale;
         } else if (moveInputX > 0) {
             isFacingRight = true;
-            Vector3 localScale = transform.localScale;
-            localScale.x = 1f;
+            if (twoCheck >= 2) {
+                localScale.x = 2f;
+            } else {
+                localScale.x *= 1f; 
+            }
             transform.localScale = localScale;
         }
     }

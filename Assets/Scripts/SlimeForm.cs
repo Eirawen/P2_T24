@@ -36,8 +36,8 @@ public class SlimeForm : PlayerController {
     }
 
     protected override void Update() {
-        moveInputX = Input.GetAxis("Horizontal");
-        moveInputY = Input.GetAxis("Vertical");
+        moveInputX = Input.GetAxisRaw("Horizontal");
+        moveInputY = Input.GetAxisRaw("Vertical");
 
         MovePlayer();
 

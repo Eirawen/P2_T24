@@ -20,7 +20,7 @@ public class PasswordPuzzle : MonoBehaviour
 
     void CheckPassword()
     {
-        string enteredPassword = inputField.text;
+        string enteredPassword = inputField.text.ToUpper();
 
         if (enteredPassword == correctPassword)
         {
