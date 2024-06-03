@@ -31,8 +31,8 @@ public class CatForm : PlayerController {
     }
 
      protected override void Update() { // called every frame
-        moveInputX = Input.GetAxis("Horizontal");
-        moveInputY = Input.GetAxis("Vertical");
+        moveInputX = Input.GetAxisRaw("Horizontal");
+        moveInputY = Input.GetAxisRaw("Vertical");
 
         if (!isWallJumping) {
             base.MovePlayer();
