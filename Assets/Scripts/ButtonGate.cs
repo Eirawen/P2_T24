@@ -99,8 +99,8 @@ public class ButtonGate : MonoBehaviour
 
     void moveSamIn(){
         Debug.Log("in moveSamIn");
-        Sam.transform.position = new Vector3(Sam.transform.position.x + 8, Sam.transform.position.y, 0);
-        school.transform.position = new Vector3(school.transform.position.x + 9, school.transform.position.y, 0);
+        Sam.transform.position = new Vector3(Sam.transform.position.x + 17, Sam.transform.position.y, 0);
+        school.transform.position = new Vector3(school.transform.position.x + 18, school.transform.position.y, 0);
         Sam.GetComponent<DialogueTrigger>().dialogue.dialogueLines[0].line = "Thank you for letting us in!";
         Sam.GetComponent<DialogueTrigger>().dialogue.dialogueLines[1].line = "Looks like the exit's up there, but we can't jump that high!";
         Sam.GetComponent<DialogueTrigger>().dialogue.dialogueLines[2].line = "Can you raise the water level somehow?";
