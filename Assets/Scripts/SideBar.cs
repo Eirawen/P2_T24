@@ -18,6 +18,9 @@ public class SideBar : MonoBehaviour
     public Sprite catOff;
     public Sprite catOn;
 
+    public Image birdHotkey;
+    public Sprite birdOff;
+    public Sprite birdOn;
     //public PlayerController currentForm; 
     void Start ()
 	{
@@ -29,12 +32,12 @@ public class SideBar : MonoBehaviour
         slimeHotkey.sprite = slimeOn;
         fishHotkey.sprite = fishOn;
         catHotkey.sprite = catOn;
-        
+        birdHotkey.sprite = birdOn;
 
         slimeHotkey.enabled = true;
         fishHotkey.enabled = true;
         catHotkey.enabled = false;
-        
+        birdHotkey.enabled = false;
 		if (sceneName == "WaterScene") 
 		{
             // should be slime
@@ -49,7 +52,7 @@ public class SideBar : MonoBehaviour
 		{   
             catHotkey.sprite = catOn;
 			catHotkey.enabled = true;
-            
+            birdHotkey.enabled = true;
 		}
 
     } 
@@ -63,7 +66,7 @@ public class SideBar : MonoBehaviour
                     slimeHotkey.sprite = slimeOff;
                     fishHotkey.sprite = fishOn;
                     catHotkey.sprite = catOn;
-                    
+                    birdHotkey.sprite = birdOn;
                 }
                 
             }
@@ -75,7 +78,7 @@ public class SideBar : MonoBehaviour
                     slimeHotkey.sprite = slimeOn;
                    
                     catHotkey.sprite = catOn;
-             
+                    birdHotkey.sprite = birdOn;
                 }
                 
             }
@@ -87,7 +90,7 @@ public class SideBar : MonoBehaviour
                     slimeHotkey.sprite = slimeOn;
                     fishHotkey.sprite = fishOn;
                    
-                   
+                    birdHotkey.sprite = birdOn;
                 }
             }
         
