@@ -45,7 +45,7 @@ public class SideBar : MonoBehaviour
 		}
 		else if (sceneName == "CityScene")
 		{
-            fishHotkey.sprite = fishOff;
+            slimeHotkey.sprite = slimeOff;
 			catHotkey.enabled = true;
            
 		}else if (sceneName == "MountainScene")
