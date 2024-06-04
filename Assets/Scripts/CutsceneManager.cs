@@ -23,6 +23,8 @@ public class CutsceneManager : MonoBehaviour
     public float typingSpeed = 1f;
 
     public Animator animator;
+    public GameObject button1;
+    public GameObject button2;
 
     private void Awake()
     {
@@ -113,5 +115,7 @@ public class CutsceneManager : MonoBehaviour
         Debug.Log("End dialogue");
         Debug.Log("Size of cutsceneSlides is " + cutsceneSlides.Length);
         cutsceneSlides[currentSlide - 1].GetComponent<FadeObject>().fadeOut();
+        button1.SetActive(true);
+        button2.SetActive(true);
     }
 }
