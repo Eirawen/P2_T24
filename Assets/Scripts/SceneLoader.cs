@@ -11,7 +11,11 @@ public class SceneLoader : MonoBehaviour {
 
     public void LoadScene() {
         if (sceneToLoad >= 0) {
-                SceneManager.LoadScene(sceneToLoad);
+            killPlayer = GameObject.FindGameObjectsWithTag("Player");
+            foreach (GameObject player in killPlayer) {
+                Destroy(player);
+            }
+            SceneManager.LoadScene(sceneToLoad);
 
         } else {
             Debug.LogWarning("Scene to load is not set.");
