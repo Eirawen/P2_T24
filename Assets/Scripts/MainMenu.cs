@@ -12,7 +12,9 @@ public class MainMenu : MonoBehaviour
     public Slider musicSlider;
     public Slider sfxSlider;
 
-    public GameObject optionsMenu; // options menu GameObject for in-game settings
+    public GameObject optionsMenu; // options menu for settings
+    public GameObject audioMenu; // audio menu for settings
+    public GameObject controlsMenu; // controls menu for settings
 
     public void Start()
     {
@@ -22,9 +24,9 @@ public class MainMenu : MonoBehaviour
 
     public void Play()
     {
-        //SceneManager.LoadScene("Game");  is a placeholder for next scene
+        SceneManager.LoadScene("IntroScene");
         Debug.Log("Start Game");
-        MusicManager.Instance.PlayMusic("Game");
+        MusicManager.Instance.PlayMusic("Intro");
     }
 
     public void Quit()
@@ -56,6 +58,16 @@ public class MainMenu : MonoBehaviour
     {
         musicSlider.value = PlayerPrefs.GetFloat("MusicVolume");
         sfxSlider.value = PlayerPrefs.GetFloat("SFXVolume");
+    }
+
+    public void OpenVolume()
+    {
+        audioMenu.SetActive(!optionsMenu.activeSelf);
+    }
+
+    public void OpenControls()
+    {
+        controlsMenu.SetActive(!optionsMenu.activeSelf);
     }
 
     public void Update()

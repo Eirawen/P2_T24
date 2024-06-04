@@ -20,4 +20,9 @@ public class ObstacleMove : MonoBehaviour
         Vector3 update = new Vector3 (x, y, 0);
         transform.position += update * (speed + randomSpeed) * Time.deltaTime;
     }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        Destroy(gameObject);
+    }
 }
