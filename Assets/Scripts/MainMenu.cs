@@ -24,9 +24,9 @@ public class MainMenu : MonoBehaviour
 
     public void Play()
     {
-        //SceneManager.LoadScene("Game");  is a placeholder for next scene
+        SceneManager.LoadScene("IntroScene");
         Debug.Log("Start Game");
-        MusicManager.Instance.PlayMusic("Game");
+        MusicManager.Instance.PlayMusic("Intro");
     }
 
     public void Quit()
