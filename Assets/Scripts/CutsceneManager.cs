@@ -70,11 +70,17 @@ public class CutsceneManager : MonoBehaviour
             return;
         }
         Debug.Log("fading in next slide");
-        cutsceneSlides[currentSlide].GetComponent<FadeObject>().FadeIn();
+        cutsceneSlides[currentSlide].GetComponent<FadeObject>().fadeIn();
+        
+        // wait
+        // yield new WaitForSeconds(1f);
         
         if(currentSlide > 0) {
+            // while(cutsceneSlides[currentSlide].GetComponent<FadeObject>().getAlpha() < .8f) {
+            //     // Debug.Log("waiting for fade out");
+            // }
             Debug.Log("fading out current slide");
-            cutsceneSlides[currentSlide - 1].GetComponent<FadeObject>().FadeOut();
+            cutsceneSlides[currentSlide - 1].GetComponent<FadeObject>().fadeOut();
         }
         DialogueLine currentLine = lines.Dequeue();
         currentSlide++;
@@ -86,6 +92,7 @@ public class CutsceneManager : MonoBehaviour
         StopAllCoroutines();
         // Debug.Log("Typing sentence");
         StartCoroutine(TypeSentence(currentLine));
+        
     }
 
     IEnumerator TypeSentence(DialogueLine dialogueLine)
@@ -105,6 +112,6 @@ public class CutsceneManager : MonoBehaviour
         animator.Play("hide");
         Debug.Log("End dialogue");
         Debug.Log("Size of cutsceneSlides is " + cutsceneSlides.Length);
-        cutsceneSlides[currentSlide - 1].GetComponent<FadeObject>().FadeOut();
+        cutsceneSlides[currentSlide - 1].GetComponent<FadeObject>().fadeOut();
     }
 }

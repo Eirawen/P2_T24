@@ -15,11 +15,15 @@ public class FadeObject : MonoBehaviour {
         }
     }
 
-    public void FadeOut() {
+    public void fadeOut() {
         desiredAlpha = 0.0f;
     }
 
-    public void FadeIn() {
+    public void fadeIn() {
         desiredAlpha = 1.0f;
+    }
+
+    public float getAlpha() {
+        return GetComponent<SpriteRenderer>().color.a;
     }
 }
