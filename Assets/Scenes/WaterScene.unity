@@ -6082,6 +6082,8 @@ MonoBehaviour:
   wallJumpingDuration: 0.4
   wallCheck: {fileID: 0}
   groundCheck: {fileID: 0}
+  IsCatFormUnlocked: 0
+  IsSalmonFormUnlocked: 0
   Sprites: []
   currentSprite: {fileID: 0}
   slimeSprite: {fileID: 0}
@@ -6175,6 +6177,8 @@ MonoBehaviour:
   wallJumpingDuration: 0.4
   wallCheck: {fileID: 0}
   groundCheck: {fileID: 0}
+  IsCatFormUnlocked: 0
+  IsSalmonFormUnlocked: 0
   Sprites: []
   currentSprite: {fileID: 0}
   salmonJumpScale: 0.4
@@ -6242,6 +6246,8 @@ MonoBehaviour:
   wallJumpingDuration: 0.4
   wallCheck: {fileID: 0}
   groundCheck: {fileID: 0}
+  IsCatFormUnlocked: 0
+  IsSalmonFormUnlocked: 0
   Sprites:
   - {fileID: 21300000, guid: 425a91ca25c91144289daa62f9564eac, type: 3}
   - {fileID: 21300000, guid: 08bab00995436b741b0f67332e11db0d, type: 3}
@@ -6311,6 +6317,8 @@ MonoBehaviour:
   wallJumpingDuration: 0.4
   wallCheck: {fileID: 0}
   groundCheck: {fileID: 0}
+  IsCatFormUnlocked: 0
+  IsSalmonFormUnlocked: 0
   Sprites: []
   currentSprite: {fileID: 0}
   onWall: 0
@@ -12212,7 +12220,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 9d8c3c5c00156de4f8d0becedc64bbb2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -12865,6 +12873,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbf3575480402db40813e763382412fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: 0
+  eraseRenderer: 0
 --- !u!1 &1801130493
 GameObject:
   m_ObjectHideFlags: 0
@@ -13926,6 +13936,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a78da3f00f3328541b4526c0b0b5ec5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lineThickness: 1.25
+  lineIntensity: 0.5
+  fillAmount: 0.2
+  lineColor0: {r: 1, g: 0, b: 0, a: 1}
+  lineColor1: {r: 0, g: 1, b: 0, a: 1}
+  lineColor2: {r: 0, g: 0, b: 1, a: 1}
+  additiveRendering: 0
+  backfaceCulling: 1
+  fillColor: {r: 0, g: 0, b: 1, a: 1}
+  useFillColor: 0
+  cornerOutlines: 0
+  addLinesBetweenColors: 0
+  scaleWithScreenSize: 1
+  alphaCutoff: 0.5
+  flipY: 0
+  sourceCamera: {fileID: 0}
+  autoEnableOutlines: 0
+  outlineCamera: {fileID: 0}
+  outlineShaderMaterial: {fileID: 0}
+  renderTexture: {fileID: 0}
+  extraRenderTexture: {fileID: 0}
 --- !u!1 &2074003781
 GameObject:
   m_ObjectHideFlags: 0
