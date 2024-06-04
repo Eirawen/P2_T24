@@ -232,6 +232,22 @@ public class PlayerController : MonoBehaviour {
         isWallJumping = false;
     }
 
+    public void unlockForm(string formName) {
+        switch (formName) {
+            case "Salmon":
+                IsSalmonFormUnlocked = true;
+                Debug.Log("Salmon form unlocked");
+                break;
+            case "Cat":
+                IsCatFormUnlocked = true;
+                Debug.Log("Cat form unlocked");
+                break;
+            default:
+                Debug.LogError("Invalid form name");
+                break;
+        }        
+    }
+
     
 
 
