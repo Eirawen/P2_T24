@@ -36,9 +36,9 @@ public class PlayerController : MonoBehaviour {
     protected float moveInputX;
     protected float moveInputY;
 
-    public static bool catFormUnlocked; 
-    public static bool salmonFormUnlocked;
-    public static bool humanFormUnlocked; 
+    public bool IsCatFormUnlocked; 
+    public bool IsSalmonFormUnlocked; 
+    
 
     public Sprite[] Sprites; // stores the player's sprites
     public Sprite currentSprite; // stores the player's current sprite
@@ -231,6 +231,8 @@ public class PlayerController : MonoBehaviour {
     protected void stopWallJumping() {
         isWallJumping = false;
     }
+
+    
 
 
         

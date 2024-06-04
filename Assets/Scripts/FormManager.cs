@@ -40,12 +40,15 @@ public class FormManager : MonoBehaviour {
                 SwitchForm(slimeForm);
             }
             if (Input.GetKeyDown(KeyCode.F)) {
-                SwitchForm(salmonForm);
-                rb.velocity = new Vector2(0, 0);
-                
+                if (currentForm.IsSalmonFormUnlocked) {
+                    SwitchForm(salmonForm);
+                    rb.velocity = new Vector2(0, 0);
+                }
             }
             if (Input.GetKeyDown(KeyCode.C)) {
-                SwitchForm(catForm);
+                if (currentForm.IsCatFormUnlocked) {
+                    SwitchForm(catForm);
+                }
             }
         }
     }
