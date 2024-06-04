@@ -249,6 +249,10 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 04e0402086328426e96fdf23ff0b7365, type: 3}
   - trackName: Intro
     clip: {fileID: 8300000, guid: f19960ceffb0941c88f0fa03d18a3767, type: 3}
+  - trackName: Water
+    clip: {fileID: 8300000, guid: 3249b9445d0934ea99080b854c424525, type: 3}
+  - trackName: City
+    clip: {fileID: 8300000, guid: 5ef3e03e1c7994a1598af439424423db, type: 3}
 --- !u!114 &87848410
 MonoBehaviour:
   m_ObjectHideFlags: 0
