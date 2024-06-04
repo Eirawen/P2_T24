@@ -103,6 +103,6 @@ public class ButtonWater: MonoBehaviour{
         Sam.GetComponent<DialogueTrigger>().dialogue.dialogueLines[1].line = "Now we can all swim into the city!";
         Sam.GetComponent<DialogueTrigger>().dialogue.dialogueLines[2].line = "Head to that opening and we'll follow you out!";
         Sam.GetComponent<DialogueTrigger>().TriggerDialogue();
-        exit.GetComponent<BoxCollider2D>().isTrigger = false;
+        exit.GetComponent<BoxCollider2D>().isTrigger = true;
     }
 }
