@@ -18,6 +18,7 @@ public class SlimeForm : PlayerController {
     public LayerMask decompressCollisions; // defines the layer for objects which stop decompression 
 
 
+    
     void Start() {
         // slimeSprite = pc.Sprites[0];
     }
