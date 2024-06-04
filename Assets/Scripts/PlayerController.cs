@@ -187,7 +187,7 @@ public class PlayerController : MonoBehaviour {
             if (twoCheck >= 2) {
                 localScale.x = -2f;
             } else {
-                localScale.x *= -1f;
+                localScale.x = -1f;
             }
             transform.localScale = localScale;
         } else if (moveInputX > 0) {
@@ -195,7 +195,7 @@ public class PlayerController : MonoBehaviour {
             if (twoCheck >= 2) {
                 localScale.x = 2f;
             } else {
-                localScale.x *= 1f; 
+                localScale.x = 1f; 
             }
             transform.localScale = localScale;
         }

@@ -13,6 +13,7 @@ public class IceSpike : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Player")) {
             rb.bodyType = RigidbodyType2D.Dynamic;
+            rb.gravityScale = 0.4f;
         }
     }
 }
