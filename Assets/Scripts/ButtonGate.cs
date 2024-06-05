@@ -7,6 +7,7 @@ public class ButtonGate : MonoBehaviour
     public GameObject gate;
     public GameObject Sam;
     public GameObject school;
+    public GameObject openGate; 
     public float speed = 1;
     private bool isMoving;
     public bool isPressed;
@@ -26,6 +27,7 @@ public class ButtonGate : MonoBehaviour
         float y = (float) bounds.size.y;
         uppos = gate.transform.position.y + y;
         downpos = gate.transform.position.y;
+        openGate.SetActive(false);
         // uppos = gate.transform.position + new Vector3(0, y, 0);
         // downpos = gate.transform.position; 
         pos = gate.transform.position.y;
@@ -63,6 +65,7 @@ public class ButtonGate : MonoBehaviour
                     pos = gate.transform.position.y;
                 }
                 else{
+                    openGate.SetActive(true);
                     if (!isSamIn)
                     {
                         isSamIn = true;
@@ -71,12 +74,14 @@ public class ButtonGate : MonoBehaviour
                     isMoving = false;
                 }
             } else { //move down
+
                 if(pos > downpos){
                     Debug.Log("down");
                     moveDown();
                     pos = gate.transform.position.y;
                 }
                 else{
+                    openGate.SetActive(false);
                     isMoving = false;
                 }
             }
