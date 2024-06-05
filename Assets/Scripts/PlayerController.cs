@@ -89,22 +89,6 @@ public class PlayerController : MonoBehaviour {
             return;
         }
 
-
-        if (PasswordTrigger.Instance != null && PasswordTrigger.Instance.isSolving)
-        {
-            // If the player is currently solving the password, stop the player's movement
-            moveInput = 0f;
-            rb.velocity = Vector2.zero;
-            return;
-        }
-
-        // If "p" is pressed, respawn to checkpoint. Will change to on death + menu click later
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            Debug.Log("Respawn!");
-            returnToCheckpoint();
-        }
-
         WallSlide();
         WallJump();
 
@@ -230,6 +214,22 @@ public class PlayerController : MonoBehaviour {
 
     protected void stopWallJumping() {
         isWallJumping = false;
+    }
+
+    public void unlockForm(string formName) {
+        switch (formName) {
+            case "Salmon":
+                IsSalmonFormUnlocked = true;
+                Debug.Log("Salmon form unlocked");
+                break;
+            case "Cat":
+                IsCatFormUnlocked = true;
+                Debug.Log("Cat form unlocked");
+                break;
+            default:
+                Debug.LogError("Invalid form name");
+                break;
+        }        
     }
 
     

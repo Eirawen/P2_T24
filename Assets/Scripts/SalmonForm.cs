@@ -28,6 +28,7 @@ public class SalmonForm : PlayerController {
     public float waterJumpCounter; 
 
 
+
  
 
     // In order for collision checking to work, we must have a collider object set to "is trigger" on water objects rather
