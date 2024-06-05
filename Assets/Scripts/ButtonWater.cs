@@ -7,6 +7,7 @@ public class ButtonWater: MonoBehaviour{
     public GameObject Sam;
     public GameObject school;
     public GameObject water;
+    public GameObject water2;
     public GameObject exit;
     private bool isPressed;   
     private bool isColliding; 
@@ -88,12 +89,14 @@ public class ButtonWater: MonoBehaviour{
     void moveUp(){
         Debug.Log("in moveUp");
         water.transform.position += new Vector3(0, 0.05f, 0);
+        water2.transform.position += new Vector3(0, 0.05f, 0);
     }
     
     
     void moveDown(){
         Debug.Log("in moveDown");
         water.transform.position +=  new Vector3(0, -0.05f, 0);
+        water2.transform.position +=  new Vector3(0, -0.05f, 0);
     }
 
 

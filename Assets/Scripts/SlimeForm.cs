@@ -98,6 +98,7 @@ public class SlimeForm : PlayerController {
 
     private void Compress() {
         boxCollider.size = new Vector2(originalSlimeSize.x * compressWidthScale, originalSlimeSize.y * compressHeightScale);
+        boxCollider.offset = new Vector2(0, -2 *boxCollider.size.y / 3);
         spriteRenderer.sprite = compressedSprite;
     }
 
