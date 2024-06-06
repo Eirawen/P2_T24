@@ -44,7 +44,8 @@ public class DialogueTrigger : MonoBehaviour
 
         }
 
-        if (isPlayerInTrigger && isAutomatic && !DialogueManager.Instance.isDialogueActive && !hasPlayed){
+        if (isPlayerInTrigger && isAutomatic && !DialogueManager.Instance.isDialogueActive && !CutsceneManager.Instance.isCutscenePlaying && !hasPlayed){
+            Debug.Log("Triggering automatic dialogue");
             TriggerDialogue();
         }
 
@@ -57,7 +58,7 @@ public class DialogueTrigger : MonoBehaviour
         //     // GetComponent<LineRenderer>().enabled = true;
         // }
         
-        else if (isPlayerInTrigger && Input.GetKeyDown(KeyCode.E))
+        else if (isPlayerInTrigger && Input.GetKeyDown(KeyCode.E) && !CutsceneManager.Instance.isCutscenePlaying)
         {
             Debug.Log("Pressed E");
             Debug.Log(transform.position);
