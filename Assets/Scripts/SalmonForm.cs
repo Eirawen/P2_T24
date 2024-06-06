@@ -55,7 +55,7 @@ public class SalmonForm : PlayerController {
     private void OnTriggerStay2D(Collider2D water) {
         // if we are in water, change the flag. 
         
-        if (water.gameObject.layer == waterLayer) {
+        if (water.gameObject.layer == waterLayer && enabled) {
             inWater = true;
         }
         if (enabled) { 
@@ -69,8 +69,10 @@ public class SalmonForm : PlayerController {
         // if we are in water, change the flag. 
         
         if (water.gameObject.layer == waterLayer) {
-            inWater = true;
-            Debug.Log("In water");
+            if (enabled) {
+                inWater = true;
+                Debug.Log("In water");
+            }
         }
         if (enabled) { 
             rb.gravityScale = salmonGravityScale;
@@ -83,7 +85,7 @@ public class SalmonForm : PlayerController {
     private void OnTriggerExit2D(Collider2D water) {
 
         // when leaving water change the flag
-        if (water.gameObject.layer == LayerMask.NameToLayer("Water")) {
+        if (water.gameObject.layer == waterLayer) {
             inWater = false;
             
         }
