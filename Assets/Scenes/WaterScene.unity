@@ -13502,7 +13502,7 @@ MonoBehaviour:
     - character:
         name: ???
         icon: {fileID: 21300000, guid: e013923e95d6c454b91b79cfaf3869a3, type: 3}
-      line: "I\u2019m  a sockeye salmon just minding my own business.\r\n"
+      line: "I\u2019m a sockeye salmon just minding my own business.\r\n"
     - character:
         name: Sally
         icon: {fileID: 21300000, guid: e013923e95d6c454b91b79cfaf3869a3, type: 3}
