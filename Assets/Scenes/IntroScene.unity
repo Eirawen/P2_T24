@@ -1691,7 +1691,7 @@ Transform:
   m_GameObject: {fileID: 777237856}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -59.04, y: 0.4, z: 0}
+  m_LocalPosition: {x: -58.48, y: 0.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1733,6 +1733,8 @@ MonoBehaviour:
   wallJumpingDuration: 0.4
   wallCheck: {fileID: 0}
   groundCheck: {fileID: 0}
+  IsCatFormUnlocked: 0
+  IsSalmonFormUnlocked: 0
   Sprites: []
   currentSprite: {fileID: 0}
   slimeSprite: {fileID: 0}
@@ -1844,6 +1846,8 @@ MonoBehaviour:
   wallJumpingDuration: 0.4
   wallCheck: {fileID: 0}
   groundCheck: {fileID: 0}
+  IsCatFormUnlocked: 0
+  IsSalmonFormUnlocked: 0
   Sprites:
   - {fileID: 21300000, guid: 425a91ca25c91144289daa62f9564eac, type: 3}
   - {fileID: 21300000, guid: 08bab00995436b741b0f67332e11db0d, type: 3}
@@ -1913,6 +1917,8 @@ MonoBehaviour:
   wallJumpingDuration: 0.4
   wallCheck: {fileID: 0}
   groundCheck: {fileID: 0}
+  IsCatFormUnlocked: 0
+  IsSalmonFormUnlocked: 0
   Sprites: []
   currentSprite: {fileID: 0}
   onWall: 0
@@ -1962,6 +1968,8 @@ MonoBehaviour:
   wallJumpingDuration: 0.4
   wallCheck: {fileID: 0}
   groundCheck: {fileID: 0}
+  IsCatFormUnlocked: 0
+  IsSalmonFormUnlocked: 0
   Sprites: []
   currentSprite: {fileID: 0}
   salmonJumpScale: 0.4
@@ -2034,7 +2042,7 @@ MonoBehaviour:
   characterName: {fileID: 1543312953}
   dialogueArea: {fileID: 1482446320}
   isDialogueActive: 0
-  typingSpeed: 0.05
+  typingSpeed: 0.03
   animator: {fileID: 866952531}
 --- !u!95 &866952531
 Animator:
@@ -4277,7 +4285,7 @@ MonoBehaviour:
   characterIcon: {fileID: 1445055431}
   characterName: {fileID: 668458249}
   dialogueArea: {fileID: 1438049788}
-  typingSpeed: 0.05
+  typingSpeed: 0.03
   animator: {fileID: 1696143294}
   button1: {fileID: 0}
   button2: {fileID: 0}
@@ -5140,6 +5148,7 @@ SceneRoots:
   - {fileID: 970615514}
   - {fileID: 2145429954}
   - {fileID: 1039653562}
+  - {fileID: 2095962818}
   - {fileID: 1044933939}
   - {fileID: 1362387964}
   - {fileID: 1142899743}
@@ -5154,4 +5163,3 @@ SceneRoots:
   - {fileID: 891037351}
   - {fileID: 93030074}
   - {fileID: 1601991042}
-  - {fileID: 2095962818}

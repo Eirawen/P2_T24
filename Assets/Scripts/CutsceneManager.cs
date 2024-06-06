@@ -29,6 +29,7 @@ public class CutsceneManager : MonoBehaviour
     private void Awake()
     {
         if (Instance == null)
+        Debug.Log("WAKING CUTSCENE MANAGER");
             Instance = this;
 
         lines = new Queue<DialogueLine>();
