@@ -23,6 +23,7 @@ public class ButtonWater: MonoBehaviour{
         uppos = 1.48f;
         downpos = -1.33f;
         pos = water.transform.position.y;
+        exit.SetActive(false);
     }
 
      void OnCollisionEnter2D(Collision2D collision) {
@@ -106,6 +107,7 @@ public class ButtonWater: MonoBehaviour{
         Sam.GetComponent<DialogueTrigger>().dialogue.dialogueLines[1].line = "Now we can all swim into the city!";
         Sam.GetComponent<DialogueTrigger>().dialogue.dialogueLines[2].line = "Head to that opening and we'll follow you out!";
         Sam.GetComponent<DialogueTrigger>().TriggerDialogue();
+        exit.SetActive(true);
         exit.GetComponent<BoxCollider2D>().isTrigger = true;
     }
 }

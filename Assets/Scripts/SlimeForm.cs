@@ -106,6 +106,7 @@ public class SlimeForm : PlayerController {
         bool compressable = canDeCompress();
         if (compressable) {
         boxCollider.size = originalSlimeSize;
+        boxCollider.offset = new Vector2(0, 0);
         SwitchSprite();
         }
 
