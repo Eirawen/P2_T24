@@ -17305,7 +17305,7 @@ MonoBehaviour:
   characterName: {fileID: 1712638895}
   dialogueArea: {fileID: 1364794069}
   isDialogueActive: 0
-  typingSpeed: 0.01
+  typingSpeed: 0.03
   animator: {fileID: 901791810}
 --- !u!95 &901791810
 Animator:
